@@ -1,5 +1,6 @@
-import SwiftUI
 import AppKit
+import SwiftUI
+import AVFoundation
 
 struct SongDetailView: View {
     let song: Song

@@ -23,9 +23,8 @@
 		460E8EC92E3FDBE300265BB2 /* FlacMetadataReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460E8EAB2E3FDBE300265BB2 /* FlacMetadataReader.swift */; };
 		460E8ECA2E3FDBE300265BB2 /* UserMetadataOverride.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460E8EAD2E3FDBE300265BB2 /* UserMetadataOverride.swift */; };
 		460E8ECB2E3FDBE300265BB2 /* FolderPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460E8EB72E3FDBE300265BB2 /* FolderPickerView.swift */; };
-		46310E142E3DBAFF00EAC950 /* libtag_c.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46310E132E3DBAFF00EAC950 /* libtag_c.a */; };
-		467231F62E3DEAAA00767EB0 /* libtag.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 467231F52E3DEAAA00767EB0 /* libtag.a */; };
-		467231F82E3DEAE700767EB0 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 467231F72E3DEAE700767EB0 /* libz.tbd */; };
+		46546C9E2E3FF8640084C2DC /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 467231F72E3DEAE700767EB0 /* libz.tbd */; };
+		46546CA32E3FFA990084C2DC /* FlacTagsWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 46546CA22E3FFA990084C2DC /* FlacTagsWrapper.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,9 +66,135 @@
 		4611D3FA2E3C79CE00E731EB /* UserMusicLibraryManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserMusicLibraryManagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4611D4482E3D6C6A00E731EB /* UserMusicLibrary-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UserMusicLibrary-Bridging-Header.h"; sourceTree = "<group>"; };
 		46310E132E3DBAFF00EAC950 /* libtag_c.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libtag_c.a; path = TagLib/lib/libtag_c.a; sourceTree = "<group>"; };
+		46546C9F2E3FF93E0084C2DC /* FlacTagsWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlacTagsWrapper.h; sourceTree = "<group>"; };
+		46546CA22E3FFA990084C2DC /* FlacTagsWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FlacTagsWrapper.mm; sourceTree = "<group>"; };
 		467231F52E3DEAAA00767EB0 /* libtag.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libtag.a; path = TagLib/lib/libtag.a; sourceTree = "<group>"; };
 		467231F72E3DEAE700767EB0 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		465471692E4001540084C2DC /* Exceptions for "TagLib" folder in "UserMusicLibraryManager" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				include/taglib/ape/apefile.cpp,
+				include/taglib/ape/apefooter.cpp,
+				include/taglib/ape/apeitem.cpp,
+				include/taglib/ape/apeproperties.cpp,
+				include/taglib/ape/apetag.cpp,
+				include/taglib/asf/asfattribute.cpp,
+				include/taglib/asf/asffile.cpp,
+				include/taglib/asf/asfpicture.cpp,
+				include/taglib/asf/asfproperties.cpp,
+				include/taglib/asf/asftag.cpp,
+				include/taglib/audioproperties.cpp,
+				include/taglib/dsdiff/dsdiffdiintag.cpp,
+				include/taglib/dsdiff/dsdifffile.cpp,
+				include/taglib/dsdiff/dsdiffproperties.cpp,
+				include/taglib/dsf/dsffile.cpp,
+				include/taglib/dsf/dsfproperties.cpp,
+				include/taglib/fileref.cpp,
+				include/taglib/flac/flacfile.cpp,
+				include/taglib/flac/flacmetadatablock.cpp,
+				include/taglib/flac/flacpicture.cpp,
+				include/taglib/flac/flacproperties.cpp,
+				include/taglib/flac/flacunknownmetadatablock.cpp,
+				include/taglib/it/itfile.cpp,
+				include/taglib/it/itproperties.cpp,
+				include/taglib/mod/modfile.cpp,
+				include/taglib/mod/modfilebase.cpp,
+				include/taglib/mod/modproperties.cpp,
+				include/taglib/mod/modtag.cpp,
+				include/taglib/mp4/mp4atom.cpp,
+				include/taglib/mp4/mp4coverart.cpp,
+				include/taglib/mp4/mp4file.cpp,
+				include/taglib/mp4/mp4item.cpp,
+				include/taglib/mp4/mp4itemfactory.cpp,
+				include/taglib/mp4/mp4properties.cpp,
+				include/taglib/mp4/mp4tag.cpp,
+				include/taglib/mpc/mpcfile.cpp,
+				include/taglib/mpc/mpcproperties.cpp,
+				include/taglib/mpeg/id3v1/id3v1genres.cpp,
+				include/taglib/mpeg/id3v1/id3v1tag.cpp,
+				include/taglib/mpeg/id3v2/frames/attachedpictureframe.cpp,
+				include/taglib/mpeg/id3v2/frames/chapterframe.cpp,
+				include/taglib/mpeg/id3v2/frames/commentsframe.cpp,
+				include/taglib/mpeg/id3v2/frames/eventtimingcodesframe.cpp,
+				include/taglib/mpeg/id3v2/frames/generalencapsulatedobjectframe.cpp,
+				include/taglib/mpeg/id3v2/frames/ownershipframe.cpp,
+				include/taglib/mpeg/id3v2/frames/podcastframe.cpp,
+				include/taglib/mpeg/id3v2/frames/popularimeterframe.cpp,
+				include/taglib/mpeg/id3v2/frames/privateframe.cpp,
+				include/taglib/mpeg/id3v2/frames/relativevolumeframe.cpp,
+				include/taglib/mpeg/id3v2/frames/synchronizedlyricsframe.cpp,
+				include/taglib/mpeg/id3v2/frames/tableofcontentsframe.cpp,
+				include/taglib/mpeg/id3v2/frames/textidentificationframe.cpp,
+				include/taglib/mpeg/id3v2/frames/uniquefileidentifierframe.cpp,
+				include/taglib/mpeg/id3v2/frames/unknownframe.cpp,
+				include/taglib/mpeg/id3v2/frames/unsynchronizedlyricsframe.cpp,
+				include/taglib/mpeg/id3v2/frames/urllinkframe.cpp,
+				include/taglib/mpeg/id3v2/id3v2extendedheader.cpp,
+				include/taglib/mpeg/id3v2/id3v2footer.cpp,
+				include/taglib/mpeg/id3v2/id3v2frame.cpp,
+				include/taglib/mpeg/id3v2/id3v2framefactory.cpp,
+				include/taglib/mpeg/id3v2/id3v2header.cpp,
+				include/taglib/mpeg/id3v2/id3v2synchdata.cpp,
+				include/taglib/mpeg/id3v2/id3v2tag.cpp,
+				include/taglib/mpeg/mpegfile.cpp,
+				include/taglib/mpeg/mpegheader.cpp,
+				include/taglib/mpeg/mpegproperties.cpp,
+				include/taglib/mpeg/xingheader.cpp,
+				include/taglib/ogg/flac/oggflacfile.cpp,
+				include/taglib/ogg/oggfile.cpp,
+				include/taglib/ogg/oggpage.cpp,
+				include/taglib/ogg/oggpageheader.cpp,
+				include/taglib/ogg/opus/opusfile.cpp,
+				include/taglib/ogg/opus/opusproperties.cpp,
+				include/taglib/ogg/speex/speexfile.cpp,
+				include/taglib/ogg/speex/speexproperties.cpp,
+				include/taglib/ogg/vorbis/vorbisfile.cpp,
+				include/taglib/ogg/vorbis/vorbisproperties.cpp,
+				include/taglib/ogg/xiphcomment.cpp,
+				include/taglib/riff/aiff/aifffile.cpp,
+				include/taglib/riff/aiff/aiffproperties.cpp,
+				include/taglib/riff/rifffile.cpp,
+				include/taglib/riff/wav/infotag.cpp,
+				include/taglib/riff/wav/wavfile.cpp,
+				include/taglib/riff/wav/wavproperties.cpp,
+				include/taglib/s3m/s3mfile.cpp,
+				include/taglib/s3m/s3mproperties.cpp,
+				include/taglib/shorten/shortenfile.cpp,
+				include/taglib/shorten/shortenproperties.cpp,
+				include/taglib/shorten/shortentag.cpp,
+				include/taglib/tag.cpp,
+				include/taglib/tagunion.cpp,
+				include/taglib/tagutils.cpp,
+				include/taglib/toolkit/tbytevector.cpp,
+				include/taglib/toolkit/tbytevectorlist.cpp,
+				include/taglib/toolkit/tbytevectorstream.cpp,
+				include/taglib/toolkit/tdebug.cpp,
+				include/taglib/toolkit/tdebuglistener.cpp,
+				include/taglib/toolkit/tfile.cpp,
+				include/taglib/toolkit/tfilestream.cpp,
+				include/taglib/toolkit/tiostream.cpp,
+				include/taglib/toolkit/tlist.tcc,
+				include/taglib/toolkit/tmap.tcc,
+				include/taglib/toolkit/tpicturetype.cpp,
+				include/taglib/toolkit/tpropertymap.cpp,
+				include/taglib/toolkit/tstring.cpp,
+				include/taglib/toolkit/tstringlist.cpp,
+				include/taglib/toolkit/tvariant.cpp,
+				include/taglib/toolkit/tversionnumber.cpp,
+				include/taglib/toolkit/tzlib.cpp,
+				include/taglib/trueaudio/trueaudiofile.cpp,
+				include/taglib/trueaudio/trueaudioproperties.cpp,
+				include/taglib/wavpack/wavpackfile.cpp,
+				include/taglib/wavpack/wavpackproperties.cpp,
+				include/taglib/xm/xmfile.cpp,
+				include/taglib/xm/xmproperties.cpp,
+			);
+			target = 4611D3E12E3C79CC00E731EB /* UserMusicLibraryManager */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		4611D3E42E3C79CC00E731EB /* UserMusicLibraryManager */ = {
@@ -87,6 +212,14 @@
 			path = UserMusicLibraryManagerUITests;
 			sourceTree = "<group>";
 		};
+		465470EB2E4000D60084C2DC /* TagLib */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				465471692E4001540084C2DC /* Exceptions for "TagLib" folder in "UserMusicLibraryManager" target */,
+			);
+			path = TagLib;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,9 +227,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				467231F82E3DEAE700767EB0 /* libz.tbd in Frameworks */,
-				467231F62E3DEAAA00767EB0 /* libtag.a in Frameworks */,
-				46310E142E3DBAFF00EAC950 /* libtag_c.a in Frameworks */,
+				46546C9E2E3FF8640084C2DC /* libz.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +354,8 @@
 		4611D3D92E3C79CC00E731EB = {
 			isa = PBXGroup;
 			children = (
+				46546CA22E3FFA990084C2DC /* FlacTagsWrapper.mm */,
+				46546C9F2E3FF93E0084C2DC /* FlacTagsWrapper.h */,
 				460E8EBB2E3FDBE300265BB2 /* Sources */,
 				4611D4482E3D6C6A00E731EB /* UserMusicLibrary-Bridging-Header.h */,
 				4611D3F32E3C79CE00E731EB /* UserMusicLibraryManagerTests */,
@@ -230,6 +363,7 @@
 				4611D3E32E3C79CC00E731EB /* Products */,
 				4611D3E42E3C79CC00E731EB /* UserMusicLibraryManager */,
 				46310E122E3DBAFF00EAC950 /* Frameworks */,
+				465470EB2E4000D60084C2DC /* TagLib */,
 			);
 			sourceTree = "<group>";
 		};
@@ -270,6 +404,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				4611D3E42E3C79CC00E731EB /* UserMusicLibraryManager */,
+				465470EB2E4000D60084C2DC /* TagLib */,
 			);
 			name = UserMusicLibraryManager;
 			packageProductDependencies = (
@@ -404,6 +539,7 @@
 				460E8EC02E3FDBE300265BB2 /* AudioMetadataReader.swift in Sources */,
 				460E8EC12E3FDBE300265BB2 /* UserMusicLibraryManagerApp.swift in Sources */,
 				460E8EC22E3FDBE300265BB2 /* UserMetadataStore.swift in Sources */,
+				46546CA32E3FFA990084C2DC /* FlacTagsWrapper.mm in Sources */,
 				460E8EC32E3FDBE300265BB2 /* FolderAccessManager.swift in Sources */,
 				460E8EC42E3FDBE300265BB2 /* ArtworkCacheManager.swift in Sources */,
 				460E8EC52E3FDBE300265BB2 /* ArtworkValidator.swift in Sources */,
@@ -582,10 +718,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				HEADER_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/TagLib/include/**",
-					"$(PROJECT_DIR)/TagLib/include/taglib/**",
-				);
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/TagLib/include";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -593,13 +726,16 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/TagLib/lib";
 				MARKETING_VERSION = 1.0;
-				OTHER_LDFLAGS = "-lc++";
+				OTHER_LDFLAGS = (
+					"-ltag_c",
+					"-ltag",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = krum.UserMusicLibraryManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INCLUDE_PATHS = "$(PROJECT_DIR)/TagLib/include/**";
-				SWIFT_OBJC_BRIDGING_HEADER = "UserMusicLibraryManager/UserMusicLibrary-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/UserMusicLibrary-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -616,10 +752,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				HEADER_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/TagLib/include/**",
-					"$(PROJECT_DIR)/TagLib/include/taglib/**",
-				);
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/TagLib/include";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -627,13 +760,16 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/TagLib/lib";
 				MARKETING_VERSION = 1.0;
-				OTHER_LDFLAGS = "-lc++";
+				OTHER_LDFLAGS = (
+					"-ltag_c",
+					"-ltag",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = krum.UserMusicLibraryManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INCLUDE_PATHS = "$(PROJECT_DIR)/TagLib/include/**";
-				SWIFT_OBJC_BRIDGING_HEADER = "UserMusicLibraryManager/UserMusicLibrary-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/UserMusicLibrary-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

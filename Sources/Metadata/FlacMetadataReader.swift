@@ -20,7 +20,11 @@ class FlacMetadataReader {
         let audioProperties = taglib_file_audioproperties(file)
         let duration: TimeInterval? = audioProperties.map { TimeInterval(taglib_audioproperties_length($0)) }
 
-        // Artwork not supported via tag_c.h bindings, so we skip it for now
+        // Extract FLAC front-cover art via Objective-C++ bridge
+        var artwork: NSImage? = nil
+        if let imageData = FlacTagsWrapper.frontCoverImageData(fromPath: url.path) {
+            artwork = NSImage(data: imageData)
+        }
 
         return Song(
             url: url,
@@ -28,7 +32,7 @@ class FlacMetadataReader {
             artist: artist ?? "Unknown Artist",
             album: album ?? "Unknown Album",
             duration: duration,
-            artwork: nil,
+            artwork: artwork,
             trackNumber: trackNumber
         )
     }
