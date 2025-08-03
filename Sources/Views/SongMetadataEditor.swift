@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct SongMetadataEditor: View {
-    @Binding var song: Song
+    @Binding var songs: [Song]
+    @Binding var userOverridesByURL: [URL: Song.UserOverrides]
+    let index: Int
     @Environment(\.dismiss) private var dismiss
+    var onSave: ((Song.UserOverrides) -> Void)? = nil
 
     @State private var editedTitle: String = ""
     @State private var editedArtist: String = ""
@@ -23,7 +26,7 @@ struct SongMetadataEditor: View {
     var body: some View {
         Form {
             Section {
-                Text("Editing: \(editedTitle.isEmpty ? song.title : editedTitle)")
+                Text("Editing: \(editedTitle.isEmpty ? songs[index].title : editedTitle)")
                     .font(.title2)
                     .bold()
                     .padding(.bottom, 5)
@@ -46,21 +49,22 @@ struct SongMetadataEditor: View {
                     dismiss()
                 }
                 Button("OK") {
-                    song = Song(
-                        url: song.url,
-                        title: song.title,
-                        artist: song.artist,
-                        album: song.album,
-                        duration: song.duration,
-                        artwork: song.artwork,
-                        trackNumber: song.trackNumber,
-                        userOverrides: Song.UserOverrides(
-                            title: editedTitle.isEmpty ? nil : editedTitle,
-                            artist: editedArtist.isEmpty ? nil : editedArtist,
-                            album: editedAlbum.isEmpty ? nil : editedAlbum,
-                            trackNumber: Int(editedTrackNumberString)
-                        )
+                    print("Saving override: track number string = \(editedTrackNumberString)")
+                    let parsedTrack = Int(editedTrackNumberString)
+                    print("Parsed track number = \(String(describing: parsedTrack))")
+
+                    let override = Song.UserOverrides(
+                        title: editedTitle.isEmpty ? nil : editedTitle,
+                        artist: editedArtist.isEmpty ? nil : editedArtist,
+                        album: editedAlbum.isEmpty ? nil : editedAlbum,
+                        trackNumber: parsedTrack
                     )
+                    onSave?(override)
+
+                    songs[index].userOverrides = override
+                    let standardizedURL = songs[index].url.standardizedFileURL
+                    userOverridesByURL[standardizedURL] = override
+
                     dismiss()
                 }
                 .keyboardShortcut(.defaultAction)
@@ -71,10 +75,10 @@ struct SongMetadataEditor: View {
         .frame(minWidth: 400, minHeight: 300)
         .padding()
         .onAppear {
-            editedTitle = song.userOverrides?.title ?? song.title
-            editedArtist = song.userOverrides?.artist ?? song.artist
-            editedAlbum = song.userOverrides?.album ?? song.album
-            editedTrackNumberString = song.userOverrides?.trackNumber.map { String($0) } ?? song.trackNumber.map { String($0) } ?? ""
+            editedTitle = songs[index].userOverrides?.title ?? songs[index].title
+            editedArtist = songs[index].userOverrides?.artist ?? songs[index].artist
+            editedAlbum = songs[index].userOverrides?.album ?? songs[index].album
+            editedTrackNumberString = songs[index].userOverrides?.trackNumber.map { String($0) } ?? songs[index].trackNumber.map { String($0) } ?? ""
         }
     }
 }

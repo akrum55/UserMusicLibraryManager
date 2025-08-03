@@ -5,17 +5,19 @@ import AppKit
 @available(macOS 13.0, *)
 struct ContentView: View {
     @State private var songs: [Song] = []
+    @State private var userOverridesByURL: [URL: Song.UserOverrides] = [:]
     @State private var selectedFolder: URL? = nil
-    @State private var selectedSongURL: URL? = nil
+    @State private var selectedSongID: UUID? = nil
     @State private var artwork: NSImage? = nil
     @State private var isEditingMetadata: Bool = false
+    @State private var songsVersion = 0
 
     var body: some View {
         NavigationSplitView {
             VStack {
                 FolderPickerView(selectedFolder: $selectedFolder)
-                List(selection: $selectedSongURL) {
-                    ForEach(songs, id: \.url) { song in
+                List(selection: $selectedSongID) {
+                    ForEach(songs) { song in
                         HStack {
                             if let image = song.artwork {
                                 Image(nsImage: image)
@@ -32,6 +34,11 @@ struct ContentView: View {
                                 Text("\(song.effectiveArtist) – \(song.effectiveAlbum)")
                                     .font(.subheadline)
                                     .foregroundColor(.secondary)
+                                if let track = song.effectiveTrackNumber {
+                                    Text("Track \(track)")
+                                        .font(.caption)
+                                        .foregroundColor(.secondary)
+                                }
                             }
                             Spacer()
                             if let duration = song.duration {
@@ -42,29 +49,52 @@ struct ContentView: View {
                         }
                     }
                 }
+                .id(songsVersion)
             }
         } detail: {
-            if let url = selectedSongURL,
-               let index = songs.firstIndex(where: { $0.url == url }) {
+            if let id = selectedSongID,
+               let index = songs.firstIndex(where: { $0.id == id }) {
                 SongDetailView(song: $songs[index]) {
                     isEditingMetadata = true
                 }
+                .id(songsVersion)
             } else {
                 Text("Select a song to view details")
                     .foregroundColor(.secondary)
             }
         }
         .sheet(isPresented: $isEditingMetadata) {
-            if let url = selectedSongURL,
-               let index = songs.firstIndex(where: { $0.url == url }) {
-                SongMetadataEditor(song: $songs[index])
+            if let id = selectedSongID,
+               let index = songs.firstIndex(where: { $0.id == id }) {
+                SongMetadataEditor(songs: $songs, userOverridesByURL: $userOverridesByURL, index: index) { override in
+                    let standardizedURL = songs[index].url.standardizedFileURL
+                    print("Received override from editor for:", standardizedURL)
+                    userOverridesByURL[standardizedURL] = override
+                    applyUserOverrides()
+                    songsVersion += 1
+                    selectedSongID = nil
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+                        selectedSongID = songs[index].id
+                    }
+                }
             }
         }
         .onChange(of: selectedFolder) { oldFolder, newFolder in
             if let folder = newFolder {
                 Task {
                     let scanner = MusicLibraryScanner()
-                    songs = await scanner.scanFolder(folder)
+                    let scannedSongs = await scanner.scanFolder(folder)
+
+                    for song in scannedSongs {
+                        print("Scanned song URL:", song.url)
+                    }
+
+                    songs = scannedSongs
+                    applyUserOverrides()
+
+                    for song in songs {
+                        print("Final song override: \(song.url) track: \(String(describing: song.userOverrides?.trackNumber))")
+                    }
                 }
             }
         }
@@ -74,8 +104,18 @@ struct ContentView: View {
         let seconds = Int(duration) % 60
         return String(format: "%d:%02d", minutes, seconds)
     }
-}
-
-#Preview {
-    ContentView()
+    private func applyUserOverrides() {
+        songs = songs.map { original in
+            let standardizedURL = original.url.standardizedFileURL
+            if let overrides = userOverridesByURL[standardizedURL] {
+                let modified = original
+                modified.userOverrides = overrides
+                print("Apply override during map — track number override: \(String(describing: overrides.trackNumber))")
+                print("Reapplying override for: \(standardizedURL) track: \(String(describing: overrides.trackNumber))")
+                return modified
+            } else {
+                return original
+            }
+        }
+    }
 }

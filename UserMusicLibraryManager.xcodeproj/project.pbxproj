@@ -21,7 +21,6 @@
 		460E8EC72E3FDBE300265BB2 /* SongDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460E8EB82E3FDBE300265BB2 /* SongDetailView.swift */; };
 		460E8EC82E3FDBE300265BB2 /* MusicLibraryScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460E8EB22E3FDBE300265BB2 /* MusicLibraryScanner.swift */; };
 		460E8EC92E3FDBE300265BB2 /* FlacMetadataReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460E8EAB2E3FDBE300265BB2 /* FlacMetadataReader.swift */; };
-		460E8ECA2E3FDBE300265BB2 /* UserMetadataOverride.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460E8EAD2E3FDBE300265BB2 /* UserMetadataOverride.swift */; };
 		460E8ECB2E3FDBE300265BB2 /* FolderPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460E8EB72E3FDBE300265BB2 /* FolderPickerView.swift */; };
 		46546C9E2E3FF8640084C2DC /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 467231F72E3DEAE700767EB0 /* libz.tbd */; };
 		46546CA32E3FFA990084C2DC /* FlacTagsWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 46546CA22E3FFA990084C2DC /* FlacTagsWrapper.mm */; };
@@ -52,7 +51,6 @@
 		460E8EA72E3FDBE300265BB2 /* NSImage+Resizing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+Resizing.swift"; sourceTree = "<group>"; };
 		460E8EAA2E3FDBE300265BB2 /* AudioMetadataReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioMetadataReader.swift; sourceTree = "<group>"; };
 		460E8EAB2E3FDBE300265BB2 /* FlacMetadataReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlacMetadataReader.swift; sourceTree = "<group>"; };
-		460E8EAD2E3FDBE300265BB2 /* UserMetadataOverride.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMetadataOverride.swift; sourceTree = "<group>"; };
 		460E8EAF2E3FDBE300265BB2 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		460E8EB12E3FDBE300265BB2 /* FolderAccessManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderAccessManager.swift; sourceTree = "<group>"; };
 		460E8EB22E3FDBE300265BB2 /* MusicLibraryScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicLibraryScanner.swift; sourceTree = "<group>"; };
@@ -306,7 +304,6 @@
 		460E8EAE2E3FDBE300265BB2 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				460E8EAD2E3FDBE300265BB2 /* UserMetadataOverride.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -553,7 +550,6 @@
 				460E8EC72E3FDBE300265BB2 /* SongDetailView.swift in Sources */,
 				460E8EC82E3FDBE300265BB2 /* MusicLibraryScanner.swift in Sources */,
 				460E8EC92E3FDBE300265BB2 /* FlacMetadataReader.swift in Sources */,
-				460E8ECA2E3FDBE300265BB2 /* UserMetadataOverride.swift in Sources */,
 				460E8ECB2E3FDBE300265BB2 /* FolderPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

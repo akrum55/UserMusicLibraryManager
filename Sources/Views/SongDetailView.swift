@@ -7,6 +7,10 @@ struct SongDetailView: View {
     var onEditMetadataTapped: () -> Void = {}
 
     var body: some View {
+        let _ = {
+            print("Override in detail view:", String(describing: song.userOverrides))
+            print("Detail view using effectiveTrackNumber:", String(describing: song.effectiveTrackNumber))
+        }()
         VStack(alignment: .leading, spacing: 8) {
             if let artwork = song.artwork {
                 Image(nsImage: artwork)

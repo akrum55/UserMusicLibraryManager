@@ -1,7 +1,7 @@
 import Foundation
 import AppKit
 
-struct Song: Identifiable {
+class Song: Identifiable, Equatable, Hashable {
     let id = UUID()
     let url: URL
     let title: String
@@ -22,6 +22,26 @@ struct Song: Identifiable {
 
     var userOverrides: UserOverrides?
 
+    init(
+        url: URL,
+        title: String,
+        artist: String,
+        album: String,
+        duration: TimeInterval?,
+        artwork: NSImage?,
+        trackNumber: Int?,
+        userOverrides: UserOverrides? = nil
+    ) {
+        self.url = url
+        self.title = title
+        self.artist = artist
+        self.album = album
+        self.duration = duration
+        self.artwork = artwork
+        self.trackNumber = trackNumber
+        self.userOverrides = userOverrides
+    }
+
     var effectiveTitle: String {
         userOverrides?.title ?? title
     }
@@ -37,15 +57,11 @@ struct Song: Identifiable {
     var effectiveTrackNumber: Int? {
         userOverrides?.trackNumber ?? trackNumber
     }
-}
 
-extension Song: Equatable {
     static func == (lhs: Song, rhs: Song) -> Bool {
         return lhs.url == rhs.url
     }
-}
 
-extension Song: Hashable {
     func hash(into hasher: inout Hasher) {
         hasher.combine(url)
     }

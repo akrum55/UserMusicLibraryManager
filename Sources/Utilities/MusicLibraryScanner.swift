@@ -17,6 +17,7 @@ class MusicLibraryScanner {
 
         for url in fileURLs where audioExtensions.contains(url.pathExtension.lowercased()) {
             if let song = try? await AudioMetadataReader.readMetadata(from: url) {
+                print("Scanner loaded song:", song.url, "track:", song.trackNumber as Any)
                 songs.append(song)
             }
         }
