@@ -13,7 +13,7 @@ class Song: Identifiable, Equatable, Hashable {
     // Optional track number if available in metadata
     let trackNumber: Int?
 
-    struct UserOverrides {
+    struct UserOverrides: Codable {
         var title: String?
         var artist: String?
         var album: String?

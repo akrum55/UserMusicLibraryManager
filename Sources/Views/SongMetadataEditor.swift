@@ -68,7 +68,7 @@ struct SongMetadataEditor: View {
                     dismiss()
                 }
                 .keyboardShortcut(.defaultAction)
-                .disabled(!isTrackNumberValid)
+                .disabled(!editedTrackNumberString.isEmpty && !isTrackNumberValid)
             }
             .padding(.top)
         }

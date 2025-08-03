@@ -70,6 +70,7 @@ struct ContentView: View {
                     let standardizedURL = songs[index].url.standardizedFileURL
                     print("Received override from editor for:", standardizedURL)
                     userOverridesByURL[standardizedURL] = override
+                    UserOverridesStore.save(userOverridesByURL)
                     applyUserOverrides()
                     songsVersion += 1
                     selectedSongID = nil
@@ -89,8 +90,18 @@ struct ContentView: View {
                         print("Scanned song URL:", song.url)
                     }
 
-                    songs = scannedSongs
-                    applyUserOverrides()
+                    let overrides = UserOverridesStore.load()
+                    userOverridesByURL = overrides
+
+                    songs = scannedSongs.map { song in
+                        var modified = song
+                        let standardizedURL = song.url.standardizedFileURL
+                        if let override = overrides[standardizedURL] {
+                            modified.userOverrides = override
+                            print("Apply override during map — track number override: \(String(describing: override.trackNumber))")
+                        }
+                        return modified
+                    }
 
                     for song in songs {
                         print("Final song override: \(song.url) track: \(String(describing: song.userOverrides?.trackNumber))")

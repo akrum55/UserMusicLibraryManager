@@ -25,6 +25,7 @@
 		46546C9E2E3FF8640084C2DC /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 467231F72E3DEAE700767EB0 /* libz.tbd */; };
 		46546CA32E3FFA990084C2DC /* FlacTagsWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 46546CA22E3FFA990084C2DC /* FlacTagsWrapper.mm */; };
 		4654716B2E400DC30084C2DC /* SongMetadataEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4654716A2E400DC30084C2DC /* SongMetadataEditor.swift */; };
+		4654716F2E4029730084C2DC /* UserOverridesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4654716E2E4029730084C2DC /* UserOverridesStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		46546C9F2E3FF93E0084C2DC /* FlacTagsWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlacTagsWrapper.h; sourceTree = "<group>"; };
 		46546CA22E3FFA990084C2DC /* FlacTagsWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FlacTagsWrapper.mm; sourceTree = "<group>"; };
 		4654716A2E400DC30084C2DC /* SongMetadataEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongMetadataEditor.swift; sourceTree = "<group>"; };
+		4654716E2E4029730084C2DC /* UserOverridesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOverridesStore.swift; sourceTree = "<group>"; };
 		467231F52E3DEAAA00767EB0 /* libtag.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libtag.a; path = TagLib/lib/libtag.a; sourceTree = "<group>"; };
 		467231F72E3DEAE700767EB0 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -301,18 +303,11 @@
 			path = Metadata;
 			sourceTree = "<group>";
 		};
-		460E8EAE2E3FDBE300265BB2 /* User */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = User;
-			sourceTree = "<group>";
-		};
 		460E8EB02E3FDBE300265BB2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				460E8EAE2E3FDBE300265BB2 /* User */,
 				460E8EAF2E3FDBE300265BB2 /* Song.swift */,
+				4654716E2E4029730084C2DC /* UserOverridesStore.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -540,6 +535,7 @@
 				460E8EBF2E3FDBE300265BB2 /* Song.swift in Sources */,
 				4654716B2E400DC30084C2DC /* SongMetadataEditor.swift in Sources */,
 				460E8EC02E3FDBE300265BB2 /* AudioMetadataReader.swift in Sources */,
+				4654716F2E4029730084C2DC /* UserOverridesStore.swift in Sources */,
 				460E8EC12E3FDBE300265BB2 /* UserMusicLibraryManagerApp.swift in Sources */,
 				460E8EC22E3FDBE300265BB2 /* UserMetadataStore.swift in Sources */,
 				46546CA32E3FFA990084C2DC /* FlacTagsWrapper.mm in Sources */,
