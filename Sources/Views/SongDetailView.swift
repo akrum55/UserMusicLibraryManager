@@ -3,7 +3,7 @@ import SwiftUI
 import AVFoundation
 
 struct SongDetailView: View {
-    let song: Song
+    @Binding var song: Song
     var onEditMetadataTapped: () -> Void = {}
 
     var body: some View {
@@ -19,11 +19,11 @@ struct SongDetailView: View {
                     .frame(height: 200)
             }
 
-            Text("Title: \(song.title)")
+            Text("Title: \(song.effectiveTitle)")
                 .font(.headline)
-            Text("Artist: \(song.artist)")
-            Text("Album: \(song.album)")
-            if let track = song.trackNumber {
+            Text("Artist: \(song.effectiveArtist)")
+            Text("Album: \(song.effectiveAlbum)")
+            if let track = song.effectiveTrackNumber {
                 Text("Track: \(track)")
             }
             if let duration = song.duration {

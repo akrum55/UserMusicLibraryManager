@@ -193,6 +193,8 @@
 				include/taglib/wavpack/wavpackproperties.cpp,
 				include/taglib/xm/xmfile.cpp,
 				include/taglib/xm/xmproperties.cpp,
+				lib/libtag_c.a,
+				lib/libtag.a,
 			);
 			target = 4611D3E12E3C79CC00E731EB /* UserMusicLibraryManager */;
 		};
@@ -731,8 +733,8 @@
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/TagLib/lib";
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
-					"-ltag_c",
 					"-ltag",
+					"-ltag_c",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = krum.UserMusicLibraryManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -765,8 +767,8 @@
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/TagLib/lib";
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
-					"-ltag_c",
 					"-ltag",
+					"-ltag_c",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = krum.UserMusicLibraryManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";

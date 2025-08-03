@@ -46,12 +46,20 @@ struct SongMetadataEditor: View {
                     dismiss()
                 }
                 Button("OK") {
-                    let trackNumber = Int(editedTrackNumberString)
-                    song.userOverrides = Song.UserOverrides(
-                        title: editedTitle.isEmpty ? nil : editedTitle,
-                        artist: editedArtist.isEmpty ? nil : editedArtist,
-                        album: editedAlbum.isEmpty ? nil : editedAlbum,
-                        trackNumber: trackNumber
+                    song = Song(
+                        url: song.url,
+                        title: song.title,
+                        artist: song.artist,
+                        album: song.album,
+                        duration: song.duration,
+                        artwork: song.artwork,
+                        trackNumber: song.trackNumber,
+                        userOverrides: Song.UserOverrides(
+                            title: editedTitle.isEmpty ? nil : editedTitle,
+                            artist: editedArtist.isEmpty ? nil : editedArtist,
+                            album: editedAlbum.isEmpty ? nil : editedAlbum,
+                            trackNumber: Int(editedTrackNumberString)
+                        )
                     )
                     dismiss()
                 }

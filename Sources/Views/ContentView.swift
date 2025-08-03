@@ -27,9 +27,9 @@ struct ContentView: View {
                                     .cornerRadius(5)
                             }
                             VStack(alignment: .leading) {
-                                Text(song.title)
+                                Text(song.effectiveTitle)
                                     .font(.headline)
-                                Text("\(song.artist) – \(song.album)")
+                                Text("\(song.effectiveArtist) – \(song.effectiveAlbum)")
                                     .font(.subheadline)
                                     .foregroundColor(.secondary)
                             }
@@ -45,8 +45,8 @@ struct ContentView: View {
             }
         } detail: {
             if let url = selectedSongURL,
-               let song = songs.first(where: { $0.url == url }) {
-                SongDetailView(song: song) {
+               let index = songs.firstIndex(where: { $0.url == url }) {
+                SongDetailView(song: $songs[index]) {
                     isEditingMetadata = true
                 }
             } else {
