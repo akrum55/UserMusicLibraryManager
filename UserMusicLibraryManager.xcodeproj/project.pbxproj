@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		46310E142E3DBAFF00EAC950 /* libtag_c.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46310E132E3DBAFF00EAC950 /* libtag_c.a */; };
+		467231F62E3DEAAA00767EB0 /* libtag.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 467231F52E3DEAAA00767EB0 /* libtag.a */; };
+		467231F82E3DEAE700767EB0 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 467231F72E3DEAE700767EB0 /* libz.tbd */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		4611D3F12E3C79CE00E731EB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,11 +33,36 @@
 		4611D3E22E3C79CC00E731EB /* UserMusicLibraryManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UserMusicLibraryManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4611D3F02E3C79CE00E731EB /* UserMusicLibraryManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserMusicLibraryManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4611D3FA2E3C79CE00E731EB /* UserMusicLibraryManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserMusicLibraryManagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4611D4482E3D6C6A00E731EB /* UserMusicLibrary-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UserMusicLibrary-Bridging-Header.h"; sourceTree = "<group>"; };
+		46310E132E3DBAFF00EAC950 /* libtag_c.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libtag_c.a; path = TagLib/lib/libtag_c.a; sourceTree = "<group>"; };
+		467231F52E3DEAAA00767EB0 /* libtag.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libtag.a; path = TagLib/lib/libtag.a; sourceTree = "<group>"; };
+		467231F72E3DEAE700767EB0 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		4611D5E02E3D77EF00E731EB /* Exceptions for "UserMusicLibraryManager" folder in "UserMusicLibraryManagerTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				FlacMetadataReader.swift,
+			);
+			target = 4611D3EF2E3C79CE00E731EB /* UserMusicLibraryManagerTests */;
+		};
+		4611D5E12E3D77EF00E731EB /* Exceptions for "UserMusicLibraryManager" folder in "UserMusicLibraryManagerUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				FlacMetadataReader.swift,
+			);
+			target = 4611D3F92E3C79CE00E731EB /* UserMusicLibraryManagerUITests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		4611D3E42E3C79CC00E731EB /* UserMusicLibraryManager */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				4611D5E02E3D77EF00E731EB /* Exceptions for "UserMusicLibraryManager" folder in "UserMusicLibraryManagerTests" target */,
+				4611D5E12E3D77EF00E731EB /* Exceptions for "UserMusicLibraryManager" folder in "UserMusicLibraryManagerUITests" target */,
+			);
 			path = UserMusicLibraryManager;
 			sourceTree = "<group>";
 		};
@@ -52,6 +83,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				467231F82E3DEAE700767EB0 /* libz.tbd in Frameworks */,
+				467231F62E3DEAAA00767EB0 /* libtag.a in Frameworks */,
+				46310E142E3DBAFF00EAC950 /* libtag_c.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,10 +109,12 @@
 		4611D3D92E3C79CC00E731EB = {
 			isa = PBXGroup;
 			children = (
-				4611D3E42E3C79CC00E731EB /* UserMusicLibraryManager */,
+				4611D4482E3D6C6A00E731EB /* UserMusicLibrary-Bridging-Header.h */,
 				4611D3F32E3C79CE00E731EB /* UserMusicLibraryManagerTests */,
 				4611D3FD2E3C79CE00E731EB /* UserMusicLibraryManagerUITests */,
 				4611D3E32E3C79CC00E731EB /* Products */,
+				4611D3E42E3C79CC00E731EB /* UserMusicLibraryManager */,
+				46310E122E3DBAFF00EAC950 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,6 +126,16 @@
 				4611D3FA2E3C79CE00E731EB /* UserMusicLibraryManagerUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		46310E122E3DBAFF00EAC950 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				467231F72E3DEAE700767EB0 /* libz.tbd */,
+				467231F52E3DEAAA00767EB0 /* libtag.a */,
+				46310E132E3DBAFF00EAC950 /* libtag_c.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,13 +367,16 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/TagLib/include/**";
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 15.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-lstdc++";
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OBJC_BRIDGING_HEADER = "UserMusicLibraryManager/UserMusicLibraryManager-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -378,18 +427,22 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/TagLib/include/**";
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 15.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-lstdc++";
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "UserMusicLibraryManager/UserMusicLibraryManager-Bridging-Header.h";
 			};
 			name = Release;
 		};
 		4611D4052E3C79CE00E731EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = arm64;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = UserMusicLibraryManager/UserMusicLibraryManager.entitlements;
@@ -398,16 +451,24 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/TagLib/include/**",
+					"$(PROJECT_DIR)/TagLib/include/taglib/**",
+				);
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/TagLib/lib";
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-lc++";
 				PRODUCT_BUNDLE_IDENTIFIER = krum.UserMusicLibraryManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INCLUDE_PATHS = "$(PROJECT_DIR)/TagLib/include/**";
+				SWIFT_OBJC_BRIDGING_HEADER = "UserMusicLibraryManager/UserMusicLibrary-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -415,6 +476,7 @@
 		4611D4062E3C79CE00E731EB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = arm64;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = UserMusicLibraryManager/UserMusicLibraryManager.entitlements;
@@ -423,16 +485,24 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/TagLib/include/**",
+					"$(PROJECT_DIR)/TagLib/include/taglib/**",
+				);
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/TagLib/lib";
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-lc++";
 				PRODUCT_BUNDLE_IDENTIFIER = krum.UserMusicLibraryManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INCLUDE_PATHS = "$(PROJECT_DIR)/TagLib/include/**";
+				SWIFT_OBJC_BRIDGING_HEADER = "UserMusicLibraryManager/UserMusicLibrary-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

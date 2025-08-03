@@ -1,0 +1,765 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project UserMusicLibraryManager.xcodeproj -scheme UserMusicLibraryManager
+
+--- xcodebuild: WARNING: Using the first of multiple matching destinations:
+{ platform:macOS, arch:arm64, id:00008112-001644AE0E3BC01E, name:My Mac }
+{ platform:macOS, arch:x86_64, id:00008112-001644AE0E3BC01E, name:My Mac }
+{ platform:macOS, name:Any Mac }
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (1 target)
+    Target 'UserMusicLibraryManager' in project 'UserMusicLibraryManager' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --version --output-format xml1
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+Build description signature: 04dcfa3e15c66c2c7f7d7f20223e5c4d
+Build description path: /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/XCBuildData/04dcfa3e15c66c2c7f7d7f20223e5c4d.xcbuilddata
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk /Users/austinkrum/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/macosx15.5-24F74-8254517eb8b97d462ccbc072ba9094c9.sdkstatcache
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -o /Users/austinkrum/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/macosx15.5-24F74-8254517eb8b97d462ccbc072ba9094c9.sdkstatcache
+
+CreateBuildDirectory /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager.xcodeproj
+    builtin-create-build-directory /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex
+
+CreateBuildDirectory /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager.xcodeproj
+    builtin-create-build-directory /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products
+
+CreateBuildDirectory /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/EagerLinkingTBDs/Debug
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager.xcodeproj
+    builtin-create-build-directory /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/EagerLinkingTBDs/Debug
+
+WriteAuxiliaryFile /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager-7b2d64b12fca1394410af877161d9774-VFS/all-product-headers.yaml
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager.xcodeproj
+    write-file /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager-7b2d64b12fca1394410af877161d9774-VFS/all-product-headers.yaml
+
+CreateBuildDirectory /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products/Debug
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager.xcodeproj
+    builtin-create-build-directory /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products/Debug
+
+WriteAuxiliaryFile /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/UserMusicLibraryManager-all-target-headers.hmap (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    write-file /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/UserMusicLibraryManager-all-target-headers.hmap
+
+WriteAuxiliaryFile /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/UserMusicLibraryManager-own-target-headers.hmap (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    write-file /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/UserMusicLibraryManager-own-target-headers.hmap
+
+WriteAuxiliaryFile /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/UserMusicLibraryManager-all-non-framework-target-headers.hmap (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    write-file /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/UserMusicLibraryManager-all-non-framework-target-headers.hmap
+
+WriteAuxiliaryFile /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/empty-UserMusicLibraryManager.plist (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    write-file /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/empty-UserMusicLibraryManager.plist
+
+WriteAuxiliaryFile /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/UserMusicLibraryManager-generated-files.hmap (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    write-file /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/UserMusicLibraryManager-generated-files.hmap
+
+WriteAuxiliaryFile /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/UserMusicLibraryManager.hmap (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    write-file /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/UserMusicLibraryManager.hmap
+
+WriteAuxiliaryFile /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/UserMusicLibraryManager-project-headers.hmap (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    write-file /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/UserMusicLibraryManager-project-headers.hmap
+
+WriteAuxiliaryFile /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/UserMusicLibraryManager.DependencyStaticMetadataFileList (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    write-file /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/UserMusicLibraryManager.DependencyStaticMetadataFileList
+
+WriteAuxiliaryFile /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/UserMusicLibraryManager.DependencyMetadataFileList (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    write-file /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/UserMusicLibraryManager.DependencyMetadataFileList
+
+WriteAuxiliaryFile /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/UserMusicLibraryManager-DebugDylibPath-normal-arm64.txt (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    write-file /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/UserMusicLibraryManager-DebugDylibPath-normal-arm64.txt
+
+WriteAuxiliaryFile /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/UserMusicLibraryManager-DebugDylibInstallName-normal-arm64.txt (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    write-file /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/UserMusicLibraryManager-DebugDylibInstallName-normal-arm64.txt
+
+WriteAuxiliaryFile /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/Objects-normal/arm64/UserMusicLibraryManager.SwiftFileList (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    write-file /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/Objects-normal/arm64/UserMusicLibraryManager.SwiftFileList
+
+WriteAuxiliaryFile /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/Objects-normal/arm64/UserMusicLibraryManager.SwiftConstValuesFileList (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    write-file /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/Objects-normal/arm64/UserMusicLibraryManager.SwiftConstValuesFileList
+
+WriteAuxiliaryFile /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/Objects-normal/arm64/UserMusicLibraryManager_const_extract_protocols.json (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    write-file /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/Objects-normal/arm64/UserMusicLibraryManager_const_extract_protocols.json
+
+WriteAuxiliaryFile /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/Objects-normal/arm64/UserMusicLibraryManager.LinkFileList (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    write-file /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/Objects-normal/arm64/UserMusicLibraryManager.LinkFileList
+
+WriteAuxiliaryFile /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/Objects-normal/arm64/UserMusicLibraryManager-OutputFileMap.json (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    write-file /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/Objects-normal/arm64/UserMusicLibraryManager-OutputFileMap.json
+
+WriteAuxiliaryFile /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/DerivedSources/Entitlements.plist (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    write-file /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/DerivedSources/Entitlements.plist
+
+MkDir /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products/Debug/UserMusicLibraryManager.app/Contents/Resources (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    /bin/mkdir -p /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products/Debug/UserMusicLibraryManager.app/Contents/Resources
+
+MkDir /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products/Debug/UserMusicLibraryManager.app/Contents/MacOS (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    /bin/mkdir -p /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products/Debug/UserMusicLibraryManager.app/Contents/MacOS
+
+MkDir /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products/Debug/UserMusicLibraryManager.app/Contents (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    /bin/mkdir -p /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products/Debug/UserMusicLibraryManager.app/Contents
+
+MkDir /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products/Debug/UserMusicLibraryManager.app (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    /bin/mkdir -p /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products/Debug/UserMusicLibraryManager.app
+
+ProcessProductPackaging /Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager/UserMusicLibraryManager.entitlements /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/UserMusicLibraryManager.app.xcent (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    
+    Entitlements:
+    
+    {
+    "com.apple.security.app-sandbox" = 1;
+    "com.apple.security.device.usb" = 1;
+    "com.apple.security.files.user-selected.read-write" = 1;
+    "com.apple.security.get-task-allow" = 1;
+}
+    
+    builtin-productPackagingUtility /Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager/UserMusicLibraryManager.entitlements -entitlements -format xml -o /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/UserMusicLibraryManager.app.xcent
+
+ProcessProductPackagingDER /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/UserMusicLibraryManager.app.xcent /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/UserMusicLibraryManager.app.xcent.der (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    /usr/bin/derq query -f xml -i /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/UserMusicLibraryManager.app.xcent -o /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/UserMusicLibraryManager.app.xcent.der --raw
+
+Ld /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products/Debug/UserMusicLibraryManager.app/Contents/MacOS/__preview.dylib normal (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-macos15.5 -dynamiclib -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -O0 -L/Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products/Debug -LTagLib/lib -F/Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products/Debug -install_name @rpath/UserMusicLibraryManager.debug.dylib -rdynamic -Xlinker -no_deduplicate -Xlinker -debug_variant -Xlinker -dependency_info -Xlinker /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/Objects-normal/arm64/UserMusicLibraryManager_dependency_info.dat -Xlinker -no_adhoc_codesign -o /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products/Debug/UserMusicLibraryManager.app/Contents/MacOS/__preview.dylib
+
+GenerateAssetSymbols /Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager/Assets.xcassets (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    /Applications/Xcode.app/Contents/Developer/usr/bin/actool /Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager/Assets.xcassets --compile /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products/Debug/UserMusicLibraryManager.app/Contents/Resources --output-format human-readable-text --notices --warnings --export-dependency-info /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/assetcatalog_dependencies --output-partial-info-plist /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/assetcatalog_generated_info.plist --app-icon AppIcon --accent-color AccentColor --enable-on-demand-resources NO --development-region en --target-device mac --minimum-deployment-target 15.5 --platform macosx --bundle-identifier krum.UserMusicLibraryManager --generate-swift-asset-symbols /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/DerivedSources/GeneratedAssetSymbols.swift --generate-objc-asset-symbols /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/DerivedSources/GeneratedAssetSymbols.h --generate-asset-symbol-index /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/DerivedSources/GeneratedAssetSymbols-Index.plist
+/* com.apple.actool.compilation-results */
+/Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/DerivedSources/GeneratedAssetSymbols-Index.plist
+/Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/DerivedSources/GeneratedAssetSymbols.h
+/Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/DerivedSources/GeneratedAssetSymbols.swift
+
+
+CpResource /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products/Debug/UserMusicLibraryManager.app/Contents/Resources/build.log /Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager/build.log (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager/build.log /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products/Debug/UserMusicLibraryManager.app/Contents/Resources
+
+MkDir /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/assetcatalog_output/thinned (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    /bin/mkdir -p /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/assetcatalog_output/thinned
+
+MkDir /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/assetcatalog_output/unthinned (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    /bin/mkdir -p /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/assetcatalog_output/unthinned
+
+CompileAssetCatalogVariant thinned /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products/Debug/UserMusicLibraryManager.app/Contents/Resources /Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager/Assets.xcassets (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    /Applications/Xcode.app/Contents/Developer/usr/bin/actool /Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager/Assets.xcassets --compile /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/assetcatalog_output/thinned --output-format human-readable-text --notices --warnings --export-dependency-info /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/assetcatalog_dependencies_thinned --output-partial-info-plist /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/assetcatalog_generated_info.plist_thinned --app-icon AppIcon --accent-color AccentColor --enable-on-demand-resources NO --development-region en --target-device mac --minimum-deployment-target 15.5 --platform macosx
+/* com.apple.actool.compilation-results */
+/Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/assetcatalog_generated_info.plist_thinned
+
+
+SwiftDriver UserMusicLibraryManager normal arm64 com.apple.xcode.tools.swift.compiler (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name UserMusicLibraryManager -Onone -enforce-exclusivity\=checked @/Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/Objects-normal/arm64/UserMusicLibraryManager.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -target arm64-apple-macos15.5 -g -module-cache-path /Users/austinkrum/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Index.noindex/DataStore -swift-version 5 -I /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products/Debug -F /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products/Debug -emit-localized-strings -emit-localized-strings-path /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/Objects-normal/arm64 -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/austinkrum/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/macosx15.5-24F74-8254517eb8b97d462ccbc072ba9094c9.sdkstatcache -output-file-map /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/Objects-normal/arm64/UserMusicLibraryManager-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/Objects-normal/arm64/UserMusicLibraryManager.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/austinkrum/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/Objects-normal/arm64/UserMusicLibraryManager_const_extract_protocols.json -Xcc -iquote -Xcc /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/UserMusicLibraryManager-generated-files.hmap -Xcc -I/Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/UserMusicLibraryManager-own-target-headers.hmap -Xcc -I/Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/UserMusicLibraryManager-all-target-headers.hmap -Xcc -iquote -Xcc /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/UserMusicLibraryManager-project-headers.hmap -Xcc -I/Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products/Debug/include -Xcc -ITagLib/include -Xcc -ITagLib/include/taglib -Xcc -ITagLib/include/taglib/ape -Xcc -ITagLib/include/taglib/asf -Xcc -ITagLib/include/taglib/dsdiff -Xcc -ITagLib/include/taglib/dsf -Xcc -ITagLib/include/taglib/flac -Xcc -ITagLib/include/taglib/it -Xcc -ITagLib/include/taglib/mod -Xcc -ITagLib/include/taglib/mp4 -Xcc -ITagLib/include/taglib/mpc -Xcc -ITagLib/include/taglib/mpeg -Xcc -ITagLib/include/taglib/ogg -Xcc -ITagLib/include/taglib/riff -Xcc -ITagLib/include/taglib/s3m -Xcc -ITagLib/include/taglib/shorten -Xcc -ITagLib/include/taglib/toolkit -Xcc -ITagLib/include/taglib/trueaudio -Xcc -ITagLib/include/taglib/wavpack -Xcc -ITagLib/include/taglib/xm -Xcc -ITagLib/include/taglib/mpeg/id3v1 -Xcc -ITagLib/include/taglib/mpeg/id3v2 -Xcc -ITagLib/include/taglib/ogg/flac -Xcc -ITagLib/include/taglib/ogg/opus -Xcc -ITagLib/include/taglib/ogg/speex -Xcc -ITagLib/include/taglib/ogg/vorbis -Xcc -ITagLib/include/taglib/riff/aiff -Xcc -ITagLib/include/taglib/riff/wav -Xcc -ITagLib/include/taglib/mpeg/id3v2/frames -Xcc -I/Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/DerivedSources-normal/arm64 -Xcc -I/Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/DerivedSources/arm64 -Xcc -I/Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/Objects-normal/arm64/UserMusicLibraryManager-Swift.h -import-objc-header /Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager/UserMusicLibrary-Bridging-Header.h -pch-output-dir /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/PrecompiledHeaders -working-directory /Users/austinkrum/Desktop/UserMusicLibraryManager -experimental-emit-module-separately -disable-cmo
+
+SwiftGeneratePch normal arm64 Compiling\ bridging\ header (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+
+PrecompileSwiftBridgingHeader normal arm64 (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling bridging header (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+
+SwiftCompile normal arm64 Compiling\ Song.swift,\ SongDetailView.swift /Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager/Song.swift /Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager/SongDetailView.swift (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+SwiftCompile normal arm64 /Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager/Song.swift (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    
+
+SwiftCompile normal arm64 /Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager/SongDetailView.swift (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    
+
+SwiftCompile normal arm64 Compiling\ ContentView.swift,\ FlacMetadataReader.swift /Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager/ContentView.swift /Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager/FlacMetadataReader.swift (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+SwiftCompile normal arm64 /Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager/ContentView.swift (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    
+/Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager/ContentView.swift:36:37: warning: string interpolation produces a debug description for an optional value; did you mean to make this explicit?
+                            Text("\(song.duration) sec")
+                                    ^~~~~~~~~~~~~
+/Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager/ContentView.swift:36:42: note: use 'String(describing:)' to silence this warning
+                            Text("\(song.duration) sec")
+                                    ~~~~~^~~~~~~~
+                                    String(describing:  )
+/Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager/ContentView.swift:36:42: note: provide a default value to avoid this warning
+                            Text("\(song.duration) sec")
+                                    ~~~~~^~~~~~~~
+                                                  ?? <#default value#>
+/Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager/ContentView.swift:51:10: warning: 'onChange(of:perform:)' was deprecated in macOS 14.0: Use `onChange` with a two or zero parameter action closure instead.
+        .onChange(of: selectedFolder) { newFolder in
+         ^
+
+SwiftCompile normal arm64 /Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager/FlacMetadataReader.swift (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ UserMusicLibraryManager (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+
+EmitSwiftModule normal arm64 (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    
+
+SwiftCompile normal arm64 Compiling\ FolderAccessManager.swift,\ FolderPickerView.swift /Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager/FolderAccessManager.swift /Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager/FolderPickerView.swift (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+
+SwiftCompile normal arm64 /Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager/FolderAccessManager.swift (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    
+
+SwiftCompile normal arm64 /Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager/FolderPickerView.swift (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    
+
+SwiftCompile normal arm64 Compiling\ GeneratedAssetSymbols.swift /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/DerivedSources/GeneratedAssetSymbols.swift (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+
+SwiftCompile normal arm64 /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/DerivedSources/GeneratedAssetSymbols.swift (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    
+
+SwiftCompile normal arm64 Compiling\ AlbumEditorView.swift,\ AudioMetadataReader.swift /Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager/AlbumEditorView.swift /Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager/AudioMetadataReader.swift (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+SwiftCompile normal arm64 /Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager/AlbumEditorView.swift (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    
+
+SwiftCompile normal arm64 /Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager/AudioMetadataReader.swift (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    
+/Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager/AudioMetadataReader.swift:21:13: warning: initialization of immutable value 'metadataFormats' was never used; consider replacing with assignment to '_' or removing it
+        let metadataFormats = try await asset.load(.availableMetadataFormats)
+        ~~~~^~~~~~~~~~~~~~~
+        _
+
+SwiftCompile normal arm64 Compiling\ UserMusicLibraryManagerApp.swift /Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager/UserMusicLibraryManagerApp.swift (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+
+SwiftCompile normal arm64 /Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager/UserMusicLibraryManagerApp.swift (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    
+
+SwiftCompile normal arm64 Compiling\ MusicLibraryScanner.swift,\ NSImage+JPEG.swift /Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager/MusicLibraryScanner.swift /Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager/NSImage+JPEG.swift (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+
+SwiftCompile normal arm64 /Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager/MusicLibraryScanner.swift (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    
+
+SwiftCompile normal arm64 /Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager/NSImage+JPEG.swift (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling UserMusicLibraryManagerApp.swift (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+
+SwiftCompile normal arm64 Compiling\ AVMetadataItem+Helpers.swift,\ CacheManager.swift /Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager/AVMetadataItem+Helpers.swift /Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager/CacheManager.swift (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+
+SwiftCompile normal arm64 /Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager/AVMetadataItem+Helpers.swift (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    
+
+SwiftCompile normal arm64 /Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager/CacheManager.swift (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling GeneratedAssetSymbols.swift (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+
+LinkAssetCatalog /Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager/Assets.xcassets (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    builtin-linkAssetCatalog --thinned /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/assetcatalog_output/thinned --thinned-dependencies /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/assetcatalog_dependencies_thinned --thinned-info-plist-content /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/assetcatalog_generated_info.plist_thinned --unthinned /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/assetcatalog_output/unthinned --unthinned-dependencies /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/assetcatalog_dependencies_unthinned --unthinned-info-plist-content /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/assetcatalog_generated_info.plist_unthinned --output /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products/Debug/UserMusicLibraryManager.app/Contents/Resources --plist-output /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/assetcatalog_generated_info.plist
+
+ProcessInfoPlistFile /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products/Debug/UserMusicLibraryManager.app/Contents/Info.plist /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/empty-UserMusicLibraryManager.plist (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    builtin-infoPlistUtility /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/empty-UserMusicLibraryManager.plist -producttype com.apple.product-type.application -genpkginfo /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products/Debug/UserMusicLibraryManager.app/Contents/PkgInfo -expandbuildsettings -platform macosx -additionalcontentfile /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/assetcatalog_generated_info.plist -o /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products/Debug/UserMusicLibraryManager.app/Contents/Info.plist
+
+SwiftDriverJobDiscovery normal arm64 Compiling Song.swift, SongDetailView.swift (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+
+SwiftDriverJobDiscovery normal arm64 Emitting module for UserMusicLibraryManager (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+
+SwiftDriver\ Compilation\ Requirements UserMusicLibraryManager normal arm64 com.apple.xcode.tools.swift.compiler (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name UserMusicLibraryManager -Onone -enforce-exclusivity\=checked @/Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/Objects-normal/arm64/UserMusicLibraryManager.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -target arm64-apple-macos15.5 -g -module-cache-path /Users/austinkrum/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Index.noindex/DataStore -swift-version 5 -I /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products/Debug -F /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products/Debug -emit-localized-strings -emit-localized-strings-path /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/Objects-normal/arm64 -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/austinkrum/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/macosx15.5-24F74-8254517eb8b97d462ccbc072ba9094c9.sdkstatcache -output-file-map /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/Objects-normal/arm64/UserMusicLibraryManager-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/Objects-normal/arm64/UserMusicLibraryManager.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/austinkrum/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/Objects-normal/arm64/UserMusicLibraryManager_const_extract_protocols.json -Xcc -iquote -Xcc /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/UserMusicLibraryManager-generated-files.hmap -Xcc -I/Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/UserMusicLibraryManager-own-target-headers.hmap -Xcc -I/Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/UserMusicLibraryManager-all-target-headers.hmap -Xcc -iquote -Xcc /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/UserMusicLibraryManager-project-headers.hmap -Xcc -I/Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products/Debug/include -Xcc -ITagLib/include -Xcc -ITagLib/include/taglib -Xcc -ITagLib/include/taglib/ape -Xcc -ITagLib/include/taglib/asf -Xcc -ITagLib/include/taglib/dsdiff -Xcc -ITagLib/include/taglib/dsf -Xcc -ITagLib/include/taglib/flac -Xcc -ITagLib/include/taglib/it -Xcc -ITagLib/include/taglib/mod -Xcc -ITagLib/include/taglib/mp4 -Xcc -ITagLib/include/taglib/mpc -Xcc -ITagLib/include/taglib/mpeg -Xcc -ITagLib/include/taglib/ogg -Xcc -ITagLib/include/taglib/riff -Xcc -ITagLib/include/taglib/s3m -Xcc -ITagLib/include/taglib/shorten -Xcc -ITagLib/include/taglib/toolkit -Xcc -ITagLib/include/taglib/trueaudio -Xcc -ITagLib/include/taglib/wavpack -Xcc -ITagLib/include/taglib/xm -Xcc -ITagLib/include/taglib/mpeg/id3v1 -Xcc -ITagLib/include/taglib/mpeg/id3v2 -Xcc -ITagLib/include/taglib/ogg/flac -Xcc -ITagLib/include/taglib/ogg/opus -Xcc -ITagLib/include/taglib/ogg/speex -Xcc -ITagLib/include/taglib/ogg/vorbis -Xcc -ITagLib/include/taglib/riff/aiff -Xcc -ITagLib/include/taglib/riff/wav -Xcc -ITagLib/include/taglib/mpeg/id3v2/frames -Xcc -I/Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/DerivedSources-normal/arm64 -Xcc -I/Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/DerivedSources/arm64 -Xcc -I/Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/Objects-normal/arm64/UserMusicLibraryManager-Swift.h -import-objc-header /Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager/UserMusicLibrary-Bridging-Header.h -pch-output-dir /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/PrecompiledHeaders -working-directory /Users/austinkrum/Desktop/UserMusicLibraryManager -experimental-emit-module-separately -disable-cmo
+
+SwiftMergeGeneratedHeaders /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/DerivedSources/UserMusicLibraryManager-Swift.h /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/Objects-normal/arm64/UserMusicLibraryManager-Swift.h (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    builtin-swiftHeaderTool -arch arm64 /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/Objects-normal/arm64/UserMusicLibraryManager-Swift.h -o /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/DerivedSources/UserMusicLibraryManager-Swift.h
+
+Copy /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products/Debug/UserMusicLibraryManager.swiftmodule/arm64-apple-macos.swiftdoc /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/Objects-normal/arm64/UserMusicLibraryManager.swiftdoc (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/Objects-normal/arm64/UserMusicLibraryManager.swiftdoc /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products/Debug/UserMusicLibraryManager.swiftmodule/arm64-apple-macos.swiftdoc
+
+Copy /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products/Debug/UserMusicLibraryManager.swiftmodule/arm64-apple-macos.swiftmodule /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/Objects-normal/arm64/UserMusicLibraryManager.swiftmodule (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/Objects-normal/arm64/UserMusicLibraryManager.swiftmodule /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products/Debug/UserMusicLibraryManager.swiftmodule/arm64-apple-macos.swiftmodule
+
+Copy /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products/Debug/UserMusicLibraryManager.swiftmodule/arm64-apple-macos.abi.json /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/Objects-normal/arm64/UserMusicLibraryManager.abi.json (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/Objects-normal/arm64/UserMusicLibraryManager.abi.json /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products/Debug/UserMusicLibraryManager.swiftmodule/arm64-apple-macos.abi.json
+
+Copy /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products/Debug/UserMusicLibraryManager.swiftmodule/Project/arm64-apple-macos.swiftsourceinfo /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/Objects-normal/arm64/UserMusicLibraryManager.swiftsourceinfo (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/Objects-normal/arm64/UserMusicLibraryManager.swiftsourceinfo /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products/Debug/UserMusicLibraryManager.swiftmodule/Project/arm64-apple-macos.swiftsourceinfo
+
+SwiftDriverJobDiscovery normal arm64 Compiling FolderAccessManager.swift, FolderPickerView.swift (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+
+SwiftDriverJobDiscovery normal arm64 Compiling ContentView.swift, FlacMetadataReader.swift (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+
+SwiftDriverJobDiscovery normal arm64 Compiling MusicLibraryScanner.swift, NSImage+JPEG.swift (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+
+SwiftDriverJobDiscovery normal arm64 Compiling AVMetadataItem+Helpers.swift, CacheManager.swift (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+
+SwiftDriverJobDiscovery normal arm64 Compiling AlbumEditorView.swift, AudioMetadataReader.swift (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+
+SwiftDriver\ Compilation UserMusicLibraryManager normal arm64 com.apple.xcode.tools.swift.compiler (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    builtin-Swift-Compilation -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name UserMusicLibraryManager -Onone -enforce-exclusivity\=checked @/Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/Objects-normal/arm64/UserMusicLibraryManager.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -target arm64-apple-macos15.5 -g -module-cache-path /Users/austinkrum/Library/Developer/Xcode/DerivedData/ModuleCache.noindex -Xfrontend -serialize-debugging-options -profile-coverage-mapping -profile-generate -enable-testing -index-store-path /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Index.noindex/DataStore -swift-version 5 -I /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products/Debug -F /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products/Debug -emit-localized-strings -emit-localized-strings-path /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/Objects-normal/arm64 -c -j8 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/austinkrum/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/macosx15.5-24F74-8254517eb8b97d462ccbc072ba9094c9.sdkstatcache -output-file-map /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/Objects-normal/arm64/UserMusicLibraryManager-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/Objects-normal/arm64/UserMusicLibraryManager.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/austinkrum/Library/Developer/Xcode/DerivedData/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/Objects-normal/arm64/UserMusicLibraryManager_const_extract_protocols.json -Xcc -iquote -Xcc /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/UserMusicLibraryManager-generated-files.hmap -Xcc -I/Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/UserMusicLibraryManager-own-target-headers.hmap -Xcc -I/Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/UserMusicLibraryManager-all-target-headers.hmap -Xcc -iquote -Xcc /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/UserMusicLibraryManager-project-headers.hmap -Xcc -I/Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products/Debug/include -Xcc -ITagLib/include -Xcc -ITagLib/include/taglib -Xcc -ITagLib/include/taglib/ape -Xcc -ITagLib/include/taglib/asf -Xcc -ITagLib/include/taglib/dsdiff -Xcc -ITagLib/include/taglib/dsf -Xcc -ITagLib/include/taglib/flac -Xcc -ITagLib/include/taglib/it -Xcc -ITagLib/include/taglib/mod -Xcc -ITagLib/include/taglib/mp4 -Xcc -ITagLib/include/taglib/mpc -Xcc -ITagLib/include/taglib/mpeg -Xcc -ITagLib/include/taglib/ogg -Xcc -ITagLib/include/taglib/riff -Xcc -ITagLib/include/taglib/s3m -Xcc -ITagLib/include/taglib/shorten -Xcc -ITagLib/include/taglib/toolkit -Xcc -ITagLib/include/taglib/trueaudio -Xcc -ITagLib/include/taglib/wavpack -Xcc -ITagLib/include/taglib/xm -Xcc -ITagLib/include/taglib/mpeg/id3v1 -Xcc -ITagLib/include/taglib/mpeg/id3v2 -Xcc -ITagLib/include/taglib/ogg/flac -Xcc -ITagLib/include/taglib/ogg/opus -Xcc -ITagLib/include/taglib/ogg/speex -Xcc -ITagLib/include/taglib/ogg/vorbis -Xcc -ITagLib/include/taglib/riff/aiff -Xcc -ITagLib/include/taglib/riff/wav -Xcc -ITagLib/include/taglib/mpeg/id3v2/frames -Xcc -I/Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/DerivedSources-normal/arm64 -Xcc -I/Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/DerivedSources/arm64 -Xcc -I/Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/Objects-normal/arm64/UserMusicLibraryManager-Swift.h -import-objc-header /Users/austinkrum/Desktop/UserMusicLibraryManager/UserMusicLibraryManager/UserMusicLibrary-Bridging-Header.h -pch-output-dir /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/PrecompiledHeaders -working-directory /Users/austinkrum/Desktop/UserMusicLibraryManager -experimental-emit-module-separately -disable-cmo
+
+Ld /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products/Debug/UserMusicLibraryManager.app/Contents/MacOS/UserMusicLibraryManager.debug.dylib normal (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+    cd /Users/austinkrum/Desktop/UserMusicLibraryManager
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-macos15.5 -dynamiclib -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -O0 -L/Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/EagerLinkingTBDs/Debug -L/Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products/Debug -LTagLib/lib -F/Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/EagerLinkingTBDs/Debug -F/Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products/Debug -filelist /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/Objects-normal/arm64/UserMusicLibraryManager.LinkFileList -install_name @rpath/UserMusicLibraryManager.debug.dylib -Xlinker -rpath -Xlinker @executable_path/../Frameworks -Xlinker -object_path_lto -Xlinker /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/Objects-normal/arm64/UserMusicLibraryManager_lto.o -rdynamic -Xlinker -no_deduplicate -Xlinker -debug_variant -Xlinker -dependency_info -Xlinker /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/Objects-normal/arm64/UserMusicLibraryManager_dependency_info.dat -fobjc-link-runtime -fprofile-instr-generate -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Intermediates.noindex/UserMusicLibraryManager.build/Debug/UserMusicLibraryManager.build/Objects-normal/arm64/UserMusicLibraryManager.swiftmodule -ltag_c -Xlinker -alias -Xlinker _main -Xlinker ___debug_main_executable_dylib_entry_point -Xlinker -no_adhoc_codesign -o /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products/Debug/UserMusicLibraryManager.app/Contents/MacOS/UserMusicLibraryManager.debug.dylib
+ld: warning: Could not find or use auto-linked framework 'CoreAudioTypes': framework 'CoreAudioTypes' not found
+ld: warning: Could not parse or use implicit file '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/SwiftUICore.framework/Versions/A/SwiftUICore.tbd': cannot link directly with 'SwiftUICore' because product being built is not an allowed client of it
+Undefined symbols for architecture arm64:
+  "TagLib::ByteVector::ByteVector(char const*, unsigned int)", referenced from:
+      _taglib_memory_iostream_new in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::ByteVector::~ByteVector()", referenced from:
+      _taglib_memory_iostream_new in libtag_c.a[2](tag_c.cpp.o)
+      _taglib_memory_iostream_new in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      _taglib_complex_property_get in libtag_c.a[2](tag_c.cpp.o)
+      _taglib_complex_property_get in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::StringList::append(TagLib::String const&)", referenced from:
+      (anonymous namespace)::_taglib_property_set(TagLib_File*, char const*, char const*, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::StringList::StringList(TagLib::String const&)", referenced from:
+      (anonymous namespace)::_taglib_property_set(TagLib_File*, char const*, char const*, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_property_set(TagLib_File*, char const*, char const*, bool) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::StringList::StringList(TagLib::StringList const&)", referenced from:
+      std::__1::pair<std::__1::__tree_iterator<std::__1::__value_type<TagLib::String, TagLib::StringList>, std::__1::__tree_node<std::__1::__value_type<TagLib::String, TagLib::StringList>, void*>*, long>, bool> std::__1::__tree<std::__1::__value_type<TagLib::String, TagLib::StringList>, std::__1::__map_value_compare<TagLib::String, std::__1::__value_type<TagLib::String, TagLib::StringList>, std::__1::less<TagLib::String>, true>, std::__1::allocator<std::__1::__value_type<TagLib::String, TagLib::StringList>>>::__emplace_hint_unique_key_args<TagLib::String, std::__1::pair<TagLib::String const, TagLib::StringList> const&>(std::__1::__tree_const_iterator<std::__1::__value_type<TagLib::String, TagLib::StringList>, std::__1::__tree_node<std::__1::__value_type<TagLib::String, TagLib::StringList>, void*>*, long>, TagLib::String const&, std::__1::pair<TagLib::String const, TagLib::StringList> const&) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::StringList::StringList()", referenced from:
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::StringList::~StringList()", referenced from:
+      (anonymous namespace)::_taglib_property_set(TagLib_File*, char const*, char const*, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_property_set(TagLib_File*, char const*, char const*, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      _taglib_complex_property_keys in libtag_c.a[2](tag_c.cpp.o)
+      _taglib_complex_property_keys in libtag_c.a[2](tag_c.cpp.o)
+      _taglib_complex_property_get in libtag_c.a[2](tag_c.cpp.o)
+      _taglib_complex_property_get in libtag_c.a[2](tag_c.cpp.o)
+      _taglib_complex_property_get in libtag_c.a[2](tag_c.cpp.o)
+      ...
+  "TagLib::StringList::operator=(TagLib::StringList const&)", referenced from:
+      (anonymous namespace)::_taglib_property_set(TagLib_File*, char const*, char const*, bool) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::PropertyMap::find(TagLib::String const&)", referenced from:
+      (anonymous namespace)::_taglib_property_set(TagLib_File*, char const*, char const*, bool) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::PropertyMap::erase(TagLib::String const&)", referenced from:
+      (anonymous namespace)::_taglib_property_set(TagLib_File*, char const*, char const*, bool) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::PropertyMap::insert(TagLib::String const&, TagLib::StringList const&)", referenced from:
+      (anonymous namespace)::_taglib_property_set(TagLib_File*, char const*, char const*, bool) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::PropertyMap::~PropertyMap()", referenced from:
+      (anonymous namespace)::_taglib_property_set(TagLib_File*, char const*, char const*, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_property_set(TagLib_File*, char const*, char const*, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_property_set(TagLib_File*, char const*, char const*, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_property_set(TagLib_File*, char const*, char const*, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_property_set(TagLib_File*, char const*, char const*, bool) in libtag_c.a[2](tag_c.cpp.o)
+      _taglib_property_keys in libtag_c.a[2](tag_c.cpp.o)
+      _taglib_property_keys in libtag_c.a[2](tag_c.cpp.o)
+      ...
+  "TagLib::ByteVectorStream::ByteVectorStream(TagLib::ByteVector const&)", referenced from:
+      _taglib_memory_iostream_new in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::IT::File::File(char const*, bool, TagLib::AudioProperties::ReadStyle)", referenced from:
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::XM::File::File(char const*, bool, TagLib::AudioProperties::ReadStyle)", referenced from:
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::APE::File::File(char const*, bool, TagLib::AudioProperties::ReadStyle)", referenced from:
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::ASF::File::File(char const*, bool, TagLib::AudioProperties::ReadStyle)", referenced from:
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::DSF::File::File(char const*, bool, TagLib::AudioProperties::ReadStyle, TagLib::ID3v2::FrameFactory*)", referenced from:
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::MP4::File::File(char const*, bool, TagLib::AudioProperties::ReadStyle, TagLib::MP4::ItemFactory*)", referenced from:
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::MPC::File::File(char const*, bool, TagLib::AudioProperties::ReadStyle)", referenced from:
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::Mod::File::File(char const*, bool, TagLib::AudioProperties::ReadStyle)", referenced from:
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::Ogg::FLAC::File::File(char const*, bool, TagLib::AudioProperties::ReadStyle)", referenced from:
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::Ogg::Opus::File::File(char const*, bool, TagLib::AudioProperties::ReadStyle)", referenced from:
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::Ogg::Speex::File::File(char const*, bool, TagLib::AudioProperties::ReadStyle)", referenced from:
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::S3M::File::File(char const*, bool, TagLib::AudioProperties::ReadStyle)", referenced from:
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::FLAC::File::File(char const*, bool, TagLib::AudioProperties::ReadStyle, TagLib::ID3v2::FrameFactory*)", referenced from:
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::MPEG::File::File(char const*, bool, TagLib::AudioProperties::ReadStyle, TagLib::ID3v2::FrameFactory*)", referenced from:
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::RIFF::WAV::File::File(char const*, bool, TagLib::AudioProperties::ReadStyle, TagLib::ID3v2::FrameFactory*)", referenced from:
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::RIFF::AIFF::File::File(char const*, bool, TagLib::AudioProperties::ReadStyle, TagLib::ID3v2::FrameFactory*)", referenced from:
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::ID3v2::FrameFactory::setDefaultTextEncoding(TagLib::String::Type)", referenced from:
+      _taglib_id3v2_set_default_text_encoding in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::ID3v2::FrameFactory::instance()", referenced from:
+      _taglib_id3v2_set_default_text_encoding in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::DSDIFF::File::File(char const*, bool, TagLib::AudioProperties::ReadStyle, TagLib::ID3v2::FrameFactory*)", referenced from:
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::String::String(char const*, TagLib::String::Type)", referenced from:
+      _taglib_tag_set_title in libtag_c.a[2](tag_c.cpp.o)
+      _taglib_tag_set_artist in libtag_c.a[2](tag_c.cpp.o)
+      _taglib_tag_set_album in libtag_c.a[2](tag_c.cpp.o)
+      _taglib_tag_set_comment in libtag_c.a[2](tag_c.cpp.o)
+      _taglib_tag_set_genre in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_property_set(TagLib_File*, char const*, char const*, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_property_set(TagLib_File*, char const*, char const*, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_property_set(TagLib_File*, char const*, char const*, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_property_set(TagLib_File*, char const*, char const*, bool) in libtag_c.a[2](tag_c.cpp.o)
+      ...
+  "TagLib::String::String(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> const&, TagLib::String::Type)", referenced from:
+      _taglib_complex_property_get in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::String::String(TagLib::String const&)", referenced from:
+      std::__1::pair<std::__1::__tree_iterator<std::__1::__value_type<TagLib::String, TagLib::StringList>, std::__1::__tree_node<std::__1::__value_type<TagLib::String, TagLib::StringList>, void*>*, long>, bool> std::__1::__tree<std::__1::__value_type<TagLib::String, TagLib::StringList>, std::__1::__map_value_compare<TagLib::String, std::__1::__value_type<TagLib::String, TagLib::StringList>, std::__1::less<TagLib::String>, true>, std::__1::allocator<std::__1::__value_type<TagLib::String, TagLib::StringList>>>::__emplace_hint_unique_key_args<TagLib::String, std::__1::pair<TagLib::String const, TagLib::StringList> const&>(std::__1::__tree_const_iterator<std::__1::__value_type<TagLib::String, TagLib::StringList>, std::__1::__tree_node<std::__1::__value_type<TagLib::String, TagLib::StringList>, void*>*, long>, TagLib::String const&, std::__1::pair<TagLib::String const, TagLib::StringList> const&) in libtag_c.a[2](tag_c.cpp.o)
+      std::__1::pair<std::__1::__tree_iterator<std::__1::__value_type<TagLib::String, TagLib::Variant>, std::__1::__tree_node<std::__1::__value_type<TagLib::String, TagLib::Variant>, void*>*, long>, bool> std::__1::__tree<std::__1::__value_type<TagLib::String, TagLib::Variant>, std::__1::__map_value_compare<TagLib::String, std::__1::__value_type<TagLib::String, TagLib::Variant>, std::__1::less<TagLib::String>, true>, std::__1::allocator<std::__1::__value_type<TagLib::String, TagLib::Variant>>>::__emplace_hint_unique_key_args<TagLib::String, std::__1::pair<TagLib::String const, TagLib::Variant> const&>(std::__1::__tree_const_iterator<std::__1::__value_type<TagLib::String, TagLib::Variant>, std::__1::__tree_node<std::__1::__value_type<TagLib::String, TagLib::Variant>, void*>*, long>, TagLib::String const&, std::__1::pair<TagLib::String const, TagLib::Variant> const&) in libtag_c.a[2](tag_c.cpp.o)
+      std::__1::pair<std::__1::__tree_iterator<std::__1::__value_type<TagLib::String, TagLib::Variant>, std::__1::__tree_node<std::__1::__value_type<TagLib::String, TagLib::Variant>, void*>*, long>, bool> std::__1::__tree<std::__1::__value_type<TagLib::String, TagLib::Variant>, std::__1::__map_value_compare<TagLib::String, std::__1::__value_type<TagLib::String, TagLib::Variant>, std::__1::less<TagLib::String>, true>, std::__1::allocator<std::__1::__value_type<TagLib::String, TagLib::Variant>>>::__emplace_unique_key_args<TagLib::String, std::__1::piecewise_construct_t const&, std::__1::tuple<TagLib::String const&>, std::__1::tuple<>>(TagLib::String const&, std::__1::piecewise_construct_t const&, std::__1::tuple<TagLib::String const&>&&, std::__1::tuple<>&&) in libtag_c.a[2](tag_c.cpp.o)
+      std::__1::__shared_ptr_emplace<TagLib::List<TagLib::String>::ListPrivate<TagLib::String>, std::__1::allocator<TagLib::List<TagLib::String>::ListPrivate<TagLib::String>>>::__shared_ptr_emplace[abi:ne190102]<std::__1::list<TagLib::String, std::__1::allocator<TagLib::String>>&, std::__1::allocator<TagLib::List<TagLib::String>::ListPrivate<TagLib::String>>, 0>(std::__1::allocator<TagLib::List<TagLib::String>::ListPrivate<TagLib::String>>, std::__1::list<TagLib::String, std::__1::allocator<TagLib::String>>&) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::String::~String()", referenced from:
+      _taglib_tag_title in libtag_c.a[2](tag_c.cpp.o)
+      _taglib_tag_title in libtag_c.a[2](tag_c.cpp.o)
+      _taglib_tag_title in libtag_c.a[2](tag_c.cpp.o)
+      _taglib_tag_artist in libtag_c.a[2](tag_c.cpp.o)
+      _taglib_tag_artist in libtag_c.a[2](tag_c.cpp.o)
+      _taglib_tag_artist in libtag_c.a[2](tag_c.cpp.o)
+      _taglib_tag_album in libtag_c.a[2](tag_c.cpp.o)
+      _taglib_tag_album in libtag_c.a[2](tag_c.cpp.o)
+      _taglib_tag_album in libtag_c.a[2](tag_c.cpp.o)
+      ...
+  "TagLib::Vorbis::File::File(char const*, bool, TagLib::AudioProperties::ReadStyle)", referenced from:
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::FileRef::setProperties(TagLib::PropertyMap const&)", referenced from:
+      (anonymous namespace)::_taglib_property_set(TagLib_File*, char const*, char const*, bool) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::FileRef::setComplexProperties(TagLib::String const&, TagLib::List<TagLib::Map<TagLib::String, TagLib::Variant>> const&)", referenced from:
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::FileRef::save()", referenced from:
+      _taglib_file_save in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::FileRef::FileRef(char const*, bool, TagLib::AudioProperties::ReadStyle)", referenced from:
+      _taglib_file_new in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::FileRef::FileRef(TagLib::File*)", referenced from:
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::FileRef::FileRef(TagLib::IOStream*, bool, TagLib::AudioProperties::ReadStyle)", referenced from:
+      _taglib_file_new_iostream in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::FileRef::~FileRef()", referenced from:
+      _taglib_file_free in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::Shorten::File::File(char const*, bool, TagLib::AudioProperties::ReadStyle)", referenced from:
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::Variant::Variant(TagLib::ByteVector const&)", referenced from:
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::Variant::Variant(TagLib::StringList const&)", referenced from:
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::Variant::Variant(TagLib::String const&)", referenced from:
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::Variant::Variant(TagLib::Variant const&)", referenced from:
+      std::__1::pair<std::__1::__tree_iterator<std::__1::__value_type<TagLib::String, TagLib::Variant>, std::__1::__tree_node<std::__1::__value_type<TagLib::String, TagLib::Variant>, void*>*, long>, bool> std::__1::__tree<std::__1::__value_type<TagLib::String, TagLib::Variant>, std::__1::__map_value_compare<TagLib::String, std::__1::__value_type<TagLib::String, TagLib::Variant>, std::__1::less<TagLib::String>, true>, std::__1::allocator<std::__1::__value_type<TagLib::String, TagLib::Variant>>>::__emplace_hint_unique_key_args<TagLib::String, std::__1::pair<TagLib::String const, TagLib::Variant> const&>(std::__1::__tree_const_iterator<std::__1::__value_type<TagLib::String, TagLib::Variant>, std::__1::__tree_node<std::__1::__value_type<TagLib::String, TagLib::Variant>, void*>*, long>, TagLib::String const&, std::__1::pair<TagLib::String const, TagLib::Variant> const&) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::Variant::Variant(bool)", referenced from:
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::Variant::Variant(double)", referenced from:
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::Variant::Variant(int)", referenced from:
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::Variant::Variant(unsigned int)", referenced from:
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::Variant::Variant()", referenced from:
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      std::__1::pair<std::__1::__tree_iterator<std::__1::__value_type<TagLib::String, TagLib::Variant>, std::__1::__tree_node<std::__1::__value_type<TagLib::String, TagLib::Variant>, void*>*, long>, bool> std::__1::__tree<std::__1::__value_type<TagLib::String, TagLib::Variant>, std::__1::__map_value_compare<TagLib::String, std::__1::__value_type<TagLib::String, TagLib::Variant>, std::__1::less<TagLib::String>, true>, std::__1::allocator<std::__1::__value_type<TagLib::String, TagLib::Variant>>>::__emplace_unique_key_args<TagLib::String, std::__1::piecewise_construct_t const&, std::__1::tuple<TagLib::String const&>, std::__1::tuple<>>(TagLib::String const&, std::__1::piecewise_construct_t const&, std::__1::tuple<TagLib::String const&>&&, std::__1::tuple<>&&) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::Variant::Variant(long long)", referenced from:
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::Variant::Variant(unsigned long long)", referenced from:
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::Variant::~Variant()", referenced from:
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      ...
+  "TagLib::Variant::operator=(TagLib::Variant const&)", referenced from:
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      ...
+  "TagLib::WavPack::File::File(char const*, bool, TagLib::AudioProperties::ReadStyle)", referenced from:
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::TrueAudio::File::File(char const*, bool, TagLib::AudioProperties::ReadStyle, TagLib::ID3v2::FrameFactory*)", referenced from:
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::ByteVector::data() const", referenced from:
+      _taglib_complex_property_get in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::ByteVector::size() const", referenced from:
+      _taglib_complex_property_get in libtag_c.a[2](tag_c.cpp.o)
+      _taglib_complex_property_get in libtag_c.a[2](tag_c.cpp.o)
+      _taglib_complex_property_get in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::PropertyMap::find(TagLib::String const&) const", referenced from:
+      _taglib_property_get in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::String::size() const", referenced from:
+      _taglib_complex_property_get in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::String::to8Bit(bool) const", referenced from:
+      _taglib_tag_title in libtag_c.a[2](tag_c.cpp.o)
+      _taglib_tag_artist in libtag_c.a[2](tag_c.cpp.o)
+      _taglib_tag_album in libtag_c.a[2](tag_c.cpp.o)
+      _taglib_tag_comment in libtag_c.a[2](tag_c.cpp.o)
+      _taglib_tag_genre in libtag_c.a[2](tag_c.cpp.o)
+      _taglib_property_keys in libtag_c.a[2](tag_c.cpp.o)
+      _taglib_property_get in libtag_c.a[2](tag_c.cpp.o)
+      ...
+  "TagLib::String::operator<(TagLib::String const&) const", referenced from:
+      std::__1::__tree_node_base<void*>*& std::__1::__tree<std::__1::__value_type<TagLib::String, TagLib::StringList>, std::__1::__map_value_compare<TagLib::String, std::__1::__value_type<TagLib::String, TagLib::StringList>, std::__1::less<TagLib::String>, true>, std::__1::allocator<std::__1::__value_type<TagLib::String, TagLib::StringList>>>::__find_equal<TagLib::String>(std::__1::__tree_const_iterator<std::__1::__value_type<TagLib::String, TagLib::StringList>, std::__1::__tree_node<std::__1::__value_type<TagLib::String, TagLib::StringList>, void*>*, long>, std::__1::__tree_end_node<std::__1::__tree_node_base<void*>*>*&, std::__1::__tree_node_base<void*>*&, TagLib::String const&) in libtag_c.a[2](tag_c.cpp.o)
+      std::__1::__tree_node_base<void*>*& std::__1::__tree<std::__1::__value_type<TagLib::String, TagLib::StringList>, std::__1::__map_value_compare<TagLib::String, std::__1::__value_type<TagLib::String, TagLib::StringList>, std::__1::less<TagLib::String>, true>, std::__1::allocator<std::__1::__value_type<TagLib::String, TagLib::StringList>>>::__find_equal<TagLib::String>(std::__1::__tree_const_iterator<std::__1::__value_type<TagLib::String, TagLib::StringList>, std::__1::__tree_node<std::__1::__value_type<TagLib::String, TagLib::StringList>, void*>*, long>, std::__1::__tree_end_node<std::__1::__tree_node_base<void*>*>*&, std::__1::__tree_node_base<void*>*&, TagLib::String const&) in libtag_c.a[2](tag_c.cpp.o)
+      std::__1::__tree_node_base<void*>*& std::__1::__tree<std::__1::__value_type<TagLib::String, TagLib::StringList>, std::__1::__map_value_compare<TagLib::String, std::__1::__value_type<TagLib::String, TagLib::StringList>, std::__1::less<TagLib::String>, true>, std::__1::allocator<std::__1::__value_type<TagLib::String, TagLib::StringList>>>::__find_equal<TagLib::String>(std::__1::__tree_const_iterator<std::__1::__value_type<TagLib::String, TagLib::StringList>, std::__1::__tree_node<std::__1::__value_type<TagLib::String, TagLib::StringList>, void*>*, long>, std::__1::__tree_end_node<std::__1::__tree_node_base<void*>*>*&, std::__1::__tree_node_base<void*>*&, TagLib::String const&) in libtag_c.a[2](tag_c.cpp.o)
+      std::__1::__tree_node_base<void*>*& std::__1::__tree<std::__1::__value_type<TagLib::String, TagLib::StringList>, std::__1::__map_value_compare<TagLib::String, std::__1::__value_type<TagLib::String, TagLib::StringList>, std::__1::less<TagLib::String>, true>, std::__1::allocator<std::__1::__value_type<TagLib::String, TagLib::StringList>>>::__find_equal<TagLib::String>(std::__1::__tree_const_iterator<std::__1::__value_type<TagLib::String, TagLib::StringList>, std::__1::__tree_node<std::__1::__value_type<TagLib::String, TagLib::StringList>, void*>*, long>, std::__1::__tree_end_node<std::__1::__tree_node_base<void*>*>*&, std::__1::__tree_node_base<void*>*&, TagLib::String const&) in libtag_c.a[2](tag_c.cpp.o)
+      std::__1::__tree_node_base<void*>*& std::__1::__tree<std::__1::__value_type<TagLib::String, TagLib::StringList>, std::__1::__map_value_compare<TagLib::String, std::__1::__value_type<TagLib::String, TagLib::StringList>, std::__1::less<TagLib::String>, true>, std::__1::allocator<std::__1::__value_type<TagLib::String, TagLib::StringList>>>::__find_equal<TagLib::String>(std::__1::__tree_const_iterator<std::__1::__value_type<TagLib::String, TagLib::StringList>, std::__1::__tree_node<std::__1::__value_type<TagLib::String, TagLib::StringList>, void*>*, long>, std::__1::__tree_end_node<std::__1::__tree_node_base<void*>*>*&, std::__1::__tree_node_base<void*>*&, TagLib::String const&) in libtag_c.a[2](tag_c.cpp.o)
+      std::__1::__tree_node_base<void*>*& std::__1::__tree<std::__1::__value_type<TagLib::String, TagLib::StringList>, std::__1::__map_value_compare<TagLib::String, std::__1::__value_type<TagLib::String, TagLib::StringList>, std::__1::less<TagLib::String>, true>, std::__1::allocator<std::__1::__value_type<TagLib::String, TagLib::StringList>>>::__find_equal<TagLib::String>(std::__1::__tree_const_iterator<std::__1::__value_type<TagLib::String, TagLib::StringList>, std::__1::__tree_node<std::__1::__value_type<TagLib::String, TagLib::StringList>, void*>*, long>, std::__1::__tree_end_node<std::__1::__tree_node_base<void*>*>*&, std::__1::__tree_node_base<void*>*&, TagLib::String const&) in libtag_c.a[2](tag_c.cpp.o)
+      std::__1::__tree_node_base<void*>*& std::__1::__tree<std::__1::__value_type<TagLib::String, TagLib::StringList>, std::__1::__map_value_compare<TagLib::String, std::__1::__value_type<TagLib::String, TagLib::StringList>, std::__1::less<TagLib::String>, true>, std::__1::allocator<std::__1::__value_type<TagLib::String, TagLib::StringList>>>::__find_equal<TagLib::String>(std::__1::__tree_const_iterator<std::__1::__value_type<TagLib::String, TagLib::StringList>, std::__1::__tree_node<std::__1::__value_type<TagLib::String, TagLib::StringList>, void*>*, long>, std::__1::__tree_end_node<std::__1::__tree_node_base<void*>*>*&, std::__1::__tree_node_base<void*>*&, TagLib::String const&) in libtag_c.a[2](tag_c.cpp.o)
+      std::__1::__tree_node_base<void*>*& std::__1::__tree<std::__1::__value_type<TagLib::String, TagLib::StringList>, std::__1::__map_value_compare<TagLib::String, std::__1::__value_type<TagLib::String, TagLib::StringList>, std::__1::less<TagLib::String>, true>, std::__1::allocator<std::__1::__value_type<TagLib::String, TagLib::StringList>>>::__find_equal<TagLib::String>(std::__1::__tree_const_iterator<std::__1::__value_type<TagLib::String, TagLib::StringList>, std::__1::__tree_node<std::__1::__value_type<TagLib::String, TagLib::StringList>, void*>*, long>, std::__1::__tree_end_node<std::__1::__tree_node_base<void*>*>*&, std::__1::__tree_node_base<void*>*&, TagLib::String const&) in libtag_c.a[2](tag_c.cpp.o)
+      ...
+  "TagLib::FileRef::properties() const", referenced from:
+      _taglib_property_keys in libtag_c.a[2](tag_c.cpp.o)
+      _taglib_property_get in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::FileRef::audioProperties() const", referenced from:
+      _taglib_file_audioproperties in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::FileRef::complexProperties(TagLib::String const&) const", referenced from:
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      _taglib_complex_property_get in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::FileRef::complexPropertyKeys() const", referenced from:
+      _taglib_complex_property_keys in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::FileRef::tag() const", referenced from:
+      _taglib_file_tag in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_property_set(TagLib_File*, char const*, char const*, bool) in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::FileRef::isNull() const", referenced from:
+      _taglib_file_is_valid in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::Variant::type() const", referenced from:
+      _taglib_complex_property_get in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::ByteVector TagLib::Variant::value<TagLib::ByteVector>(bool*) const", referenced from:
+      _taglib_complex_property_get in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::StringList TagLib::Variant::value<TagLib::StringList>(bool*) const", referenced from:
+      _taglib_complex_property_get in libtag_c.a[2](tag_c.cpp.o)
+  "TagLib::String TagLib::Variant::value<TagLib::String>(bool*) const", referenced from:
+      _taglib_complex_property_get in libtag_c.a[2](tag_c.cpp.o)
+  "bool TagLib::Variant::value<bool>(bool*) const", referenced from:
+      _taglib_complex_property_get in libtag_c.a[2](tag_c.cpp.o)
+  "double TagLib::Variant::value<double>(bool*) const", referenced from:
+      _taglib_complex_property_get in libtag_c.a[2](tag_c.cpp.o)
+  "int TagLib::Variant::value<int>(bool*) const", referenced from:
+      _taglib_complex_property_get in libtag_c.a[2](tag_c.cpp.o)
+  "unsigned int TagLib::Variant::value<unsigned int>(bool*) const", referenced from:
+      _taglib_complex_property_get in libtag_c.a[2](tag_c.cpp.o)
+  "long long TagLib::Variant::value<long long>(bool*) const", referenced from:
+      _taglib_complex_property_get in libtag_c.a[2](tag_c.cpp.o)
+  "unsigned long long TagLib::Variant::value<unsigned long long>(bool*) const", referenced from:
+      _taglib_complex_property_get in libtag_c.a[2](tag_c.cpp.o)
+  "std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char>>::str() const", referenced from:
+      _taglib_complex_property_get in libtag_c.a[2](tag_c.cpp.o)
+  "std::__1::__shared_weak_count::__get_deleter(std::type_info const&) const", referenced from:
+      vtable for std::__1::__shared_ptr_emplace<TagLib::Map<TagLib::String, TagLib::StringList>::MapPrivate<TagLib::String, TagLib::StringList>, std::__1::allocator<TagLib::Map<TagLib::String, TagLib::StringList>::MapPrivate<TagLib::String, TagLib::StringList>>> in libtag_c.a[2](tag_c.cpp.o)
+      vtable for std::__1::__shared_ptr_emplace<TagLib::List<TagLib::Map<TagLib::String, TagLib::Variant>>::ListPrivate<TagLib::Map<TagLib::String, TagLib::Variant>>, std::__1::allocator<TagLib::List<TagLib::Map<TagLib::String, TagLib::Variant>>::ListPrivate<TagLib::Map<TagLib::String, TagLib::Variant>>>> in libtag_c.a[2](tag_c.cpp.o)
+      vtable for std::__1::__shared_ptr_emplace<TagLib::Map<TagLib::String, TagLib::Variant>::MapPrivate<TagLib::String, TagLib::Variant>, std::__1::allocator<TagLib::Map<TagLib::String, TagLib::Variant>::MapPrivate<TagLib::String, TagLib::Variant>>> in libtag_c.a[2](tag_c.cpp.o)
+      vtable for std::__1::__shared_ptr_emplace<TagLib::List<char*>::ListPrivate<char*>, std::__1::allocator<TagLib::List<char*>::ListPrivate<char*>>> in libtag_c.a[2](tag_c.cpp.o)
+      vtable for std::__1::__shared_ptr_emplace<TagLib::List<TagLib::String>::ListPrivate<TagLib::String>, std::__1::allocator<TagLib::List<TagLib::String>::ListPrivate<TagLib::String>>> in libtag_c.a[2](tag_c.cpp.o)
+  "std::__1::basic_iostream<char, std::__1::char_traits<char>>::~basic_iostream()", referenced from:
+      _taglib_complex_property_get in libtag_c.a[2](tag_c.cpp.o)
+      std::__1::basic_stringstream<char, std::__1::char_traits<char>, std::__1::allocator<char>>::basic_stringstream[abi:ne190102]() in libtag_c.a[2](tag_c.cpp.o)
+      std::__1::basic_stringstream<char, std::__1::char_traits<char>, std::__1::allocator<char>>::~basic_stringstream() in libtag_c.a[2](tag_c.cpp.o)
+  "std::__1::basic_streambuf<char, std::__1::char_traits<char>>::basic_streambuf()", referenced from:
+      std::__1::basic_stringstream<char, std::__1::char_traits<char>, std::__1::allocator<char>>::basic_stringstream[abi:ne190102]() in libtag_c.a[2](tag_c.cpp.o)
+  "std::__1::basic_streambuf<char, std::__1::char_traits<char>>::~basic_streambuf()", referenced from:
+      _taglib_complex_property_get in libtag_c.a[2](tag_c.cpp.o)
+      std::__1::basic_stringstream<char, std::__1::char_traits<char>, std::__1::allocator<char>>::~basic_stringstream() in libtag_c.a[2](tag_c.cpp.o)
+  "std::__1::__shared_weak_count::__release_weak()", referenced from:
+      TagLib::List<char*>::~List() in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_property_set(TagLib_File*, char const*, char const*, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_property_set(TagLib_File*, char const*, char const*, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      (anonymous namespace)::_taglib_complex_property_set(TagLib_File*, char const*, TagLib_Complex_Property_Attribute const**, bool) in libtag_c.a[2](tag_c.cpp.o)
+      ...
+  "std::__1::__shared_weak_count::~__shared_weak_count()", referenced from:
+      std::__1::shared_ptr<TagLib::Map<TagLib::String, TagLib::StringList>::MapPrivate<TagLib::String, TagLib::StringList>> std::__1::allocate_shared[abi:ne190102]<TagLib::Map<TagLib::String, TagLib::StringList>::MapPrivate<TagLib::String, TagLib::StringList>, std::__1::allocator<TagLib::Map<TagLib::String, TagLib::StringList>::MapPrivate<TagLib::String, TagLib::StringList>>, std::__1::map<TagLib::String, TagLib::StringList, std::__1::less<TagLib::String>, std::__1::allocator<std::__1::pair<TagLib::String const, TagLib::StringList>>>&, 0>(std::__1::allocator<TagLib::Map<TagLib::String, TagLib::StringList>::MapPrivate<TagLib::String, TagLib::StringList>> const&, std::__1::map<TagLib::String, TagLib::StringList, std::__1::less<TagLib::String>, std::__1::allocator<std::__1::pair<TagLib::String const, TagLib::StringList>>>&) in libtag_c.a[2](tag_c.cpp.o)
+      std::__1::__shared_ptr_emplace<TagLib::Map<TagLib::String, TagLib::StringList>::MapPrivate<TagLib::String, TagLib::StringList>, std::__1::allocator<TagLib::Map<TagLib::String, TagLib::StringList>::MapPrivate<TagLib::String, TagLib::StringList>>>::~__shared_ptr_emplace() in libtag_c.a[2](tag_c.cpp.o)
+      std::__1::__shared_ptr_emplace<TagLib::Map<TagLib::String, TagLib::StringList>::MapPrivate<TagLib::String, TagLib::StringList>, std::__1::allocator<TagLib::Map<TagLib::String, TagLib::StringList>::MapPrivate<TagLib::String, TagLib::StringList>>>::~__shared_ptr_emplace() in libtag_c.a[2](tag_c.cpp.o)
+      std::__1::__shared_ptr_emplace<TagLib::List<TagLib::Map<TagLib::String, TagLib::Variant>>::ListPrivate<TagLib::Map<TagLib::String, TagLib::Variant>>, std::__1::allocator<TagLib::List<TagLib::Map<TagLib::String, TagLib::Variant>>::ListPrivate<TagLib::Map<TagLib::String, TagLib::Variant>>>>::~__shared_ptr_emplace() in libtag_c.a[2](tag_c.cpp.o)
+      std::__1::__shared_ptr_emplace<TagLib::List<TagLib::Map<TagLib::String, TagLib::Variant>>::ListPrivate<TagLib::Map<TagLib::String, TagLib::Variant>>, std::__1::allocator<TagLib::List<TagLib::Map<TagLib::String, TagLib::Variant>>::ListPrivate<TagLib::Map<TagLib::String, TagLib::Variant>>>>::~__shared_ptr_emplace() in libtag_c.a[2](tag_c.cpp.o)
+      std::__1::__shared_ptr_emplace<TagLib::Map<TagLib::String, TagLib::Variant>::MapPrivate<TagLib::String, TagLib::Variant>, std::__1::allocator<TagLib::Map<TagLib::String, TagLib::Variant>::MapPrivate<TagLib::String, TagLib::Variant>>>::~__shared_ptr_emplace() in libtag_c.a[2](tag_c.cpp.o)
+      std::__1::__shared_ptr_emplace<TagLib::Map<TagLib::String, TagLib::Variant>::MapPrivate<TagLib::String, TagLib::Variant>, std::__1::allocator<TagLib::Map<TagLib::String, TagLib::Variant>::MapPrivate<TagLib::String, TagLib::Variant>>>::~__shared_ptr_emplace() in libtag_c.a[2](tag_c.cpp.o)
+      ...
+  "std::__1::ios_base::init(void*)", referenced from:
+      std::__1::basic_stringstream<char, std::__1::char_traits<char>, std::__1::allocator<char>>::basic_stringstream[abi:ne190102]() in libtag_c.a[2](tag_c.cpp.o)
+  "std::__1::basic_ios<char, std::__1::char_traits<char>>::~basic_ios()", referenced from:
+      _taglib_complex_property_get in libtag_c.a[2](tag_c.cpp.o)
+      std::__1::basic_stringstream<char, std::__1::char_traits<char>, std::__1::allocator<char>>::basic_stringstream[abi:ne190102]() in libtag_c.a[2](tag_c.cpp.o)
+      std::__1::basic_stringstream<char, std::__1::char_traits<char>, std::__1::allocator<char>>::basic_stringstream[abi:ne190102]() in libtag_c.a[2](tag_c.cpp.o)
+      std::__1::basic_stringstream<char, std::__1::char_traits<char>, std::__1::allocator<char>>::~basic_stringstream() in libtag_c.a[2](tag_c.cpp.o)
+  "typeinfo for std::__1::__shared_weak_count", referenced from:
+      typeinfo for std::__1::__shared_ptr_emplace<TagLib::Map<TagLib::String, TagLib::StringList>::MapPrivate<TagLib::String, TagLib::StringList>, std::__1::allocator<TagLib::Map<TagLib::String, TagLib::StringList>::MapPrivate<TagLib::String, TagLib::StringList>>> in libtag_c.a[2](tag_c.cpp.o)
+      typeinfo for std::__1::__shared_ptr_emplace<TagLib::List<TagLib::Map<TagLib::String, TagLib::Variant>>::ListPrivate<TagLib::Map<TagLib::String, TagLib::Variant>>, std::__1::allocator<TagLib::List<TagLib::Map<TagLib::String, TagLib::Variant>>::ListPrivate<TagLib::Map<TagLib::String, TagLib::Variant>>>> in libtag_c.a[2](tag_c.cpp.o)
+      typeinfo for std::__1::__shared_ptr_emplace<TagLib::Map<TagLib::String, TagLib::Variant>::MapPrivate<TagLib::String, TagLib::Variant>, std::__1::allocator<TagLib::Map<TagLib::String, TagLib::Variant>::MapPrivate<TagLib::String, TagLib::Variant>>> in libtag_c.a[2](tag_c.cpp.o)
+      typeinfo for std::__1::__shared_ptr_emplace<TagLib::List<char*>::ListPrivate<char*>, std::__1::allocator<TagLib::List<char*>::ListPrivate<char*>>> in libtag_c.a[2](tag_c.cpp.o)
+      typeinfo for std::__1::__shared_ptr_emplace<TagLib::List<TagLib::String>::ListPrivate<TagLib::String>, std::__1::allocator<TagLib::List<TagLib::String>::ListPrivate<TagLib::String>>> in libtag_c.a[2](tag_c.cpp.o)
+  "VTT for std::__1::basic_stringstream<char, std::__1::char_traits<char>, std::__1::allocator<char>>", referenced from:
+      _taglib_complex_property_get in libtag_c.a[2](tag_c.cpp.o)
+      _taglib_complex_property_get in libtag_c.a[2](tag_c.cpp.o)
+      std::__1::basic_stringstream<char, std::__1::char_traits<char>, std::__1::allocator<char>>::basic_stringstream[abi:ne190102]() in libtag_c.a[2](tag_c.cpp.o)
+      std::__1::basic_stringstream<char, std::__1::char_traits<char>, std::__1::allocator<char>>::~basic_stringstream() in libtag_c.a[2](tag_c.cpp.o)
+  "vtable for __cxxabiv1::__si_class_type_info", referenced from:
+      typeinfo for std::__1::__shared_ptr_emplace<TagLib::Map<TagLib::String, TagLib::StringList>::MapPrivate<TagLib::String, TagLib::StringList>, std::__1::allocator<TagLib::Map<TagLib::String, TagLib::StringList>::MapPrivate<TagLib::String, TagLib::StringList>>> in libtag_c.a[2](tag_c.cpp.o)
+      typeinfo for std::__1::__shared_ptr_emplace<TagLib::List<TagLib::Map<TagLib::String, TagLib::Variant>>::ListPrivate<TagLib::Map<TagLib::String, TagLib::Variant>>, std::__1::allocator<TagLib::List<TagLib::Map<TagLib::String, TagLib::Variant>>::ListPrivate<TagLib::Map<TagLib::String, TagLib::Variant>>>> in libtag_c.a[2](tag_c.cpp.o)
+      typeinfo for std::__1::__shared_ptr_emplace<TagLib::Map<TagLib::String, TagLib::Variant>::MapPrivate<TagLib::String, TagLib::Variant>, std::__1::allocator<TagLib::Map<TagLib::String, TagLib::Variant>::MapPrivate<TagLib::String, TagLib::Variant>>> in libtag_c.a[2](tag_c.cpp.o)
+      typeinfo for std::__1::__shared_ptr_emplace<TagLib::List<char*>::ListPrivate<char*>, std::__1::allocator<TagLib::List<char*>::ListPrivate<char*>>> in libtag_c.a[2](tag_c.cpp.o)
+      typeinfo for std::__1::__shared_ptr_emplace<TagLib::List<TagLib::String>::ListPrivate<TagLib::String>, std::__1::allocator<TagLib::List<TagLib::String>::ListPrivate<TagLib::String>>> in libtag_c.a[2](tag_c.cpp.o)
+   NOTE: a missing vtable usually means the first non-inline virtual member function has no definition.
+  "vtable for std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char>>", referenced from:
+      _taglib_complex_property_get in libtag_c.a[2](tag_c.cpp.o)
+      std::__1::basic_stringstream<char, std::__1::char_traits<char>, std::__1::allocator<char>>::basic_stringstream[abi:ne190102]() in libtag_c.a[2](tag_c.cpp.o)
+      std::__1::basic_stringstream<char, std::__1::char_traits<char>, std::__1::allocator<char>>::~basic_stringstream() in libtag_c.a[2](tag_c.cpp.o)
+   NOTE: a missing vtable usually means the first non-inline virtual member function has no definition.
+  "vtable for std::__1::basic_stringstream<char, std::__1::char_traits<char>, std::__1::allocator<char>>", referenced from:
+      std::__1::basic_stringstream<char, std::__1::char_traits<char>, std::__1::allocator<char>>::basic_stringstream[abi:ne190102]() in libtag_c.a[2](tag_c.cpp.o)
+   NOTE: a missing vtable usually means the first non-inline virtual member function has no definition.
+  "operator delete(void*)", referenced from:
+      _taglib_memory_iostream_new in libtag_c.a[2](tag_c.cpp.o)
+      _taglib_memory_iostream_new in libtag_c.a[2](tag_c.cpp.o)
+      _taglib_file_new in libtag_c.a[2](tag_c.cpp.o)
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+      ...
+  "operator<<(std::__1::basic_ostream<char, std::__1::char_traits<char>>&, TagLib::Variant const&)", referenced from:
+      _taglib_complex_property_get in libtag_c.a[2](tag_c.cpp.o)
+  "operator new(unsigned long)", referenced from:
+      _taglib_memory_iostream_new in libtag_c.a[2](tag_c.cpp.o)
+      _taglib_file_new in libtag_c.a[2](tag_c.cpp.o)
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+      TagLib_File* taglib_file_new_type_any_char<char>(char const*, TagLib_File_Type) in libtag_c.a[2](tag_c.cpp.o)
+      ...
+  "___gxx_personality_v0", referenced from:
+      /Users/austinkrum/Desktop/UserMusicLibraryManager/TagLib/lib/libtag_c.a[2](tag_c.cpp.o)
+ld: symbol(s) not found for architecture arm64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+** BUILD FAILED **
+
+
+The following build commands failed:
+	Ld /Users/austinkrum/Library/Developer/Xcode/DerivedData/UserMusicLibraryManager-ciqijoepmkyyvpfxhqxyqedplieh/Build/Products/Debug/UserMusicLibraryManager.app/Contents/MacOS/UserMusicLibraryManager.debug.dylib normal (in target 'UserMusicLibraryManager' from project 'UserMusicLibraryManager')
+	Building project UserMusicLibraryManager with scheme UserMusicLibraryManager
+(2 failures)
