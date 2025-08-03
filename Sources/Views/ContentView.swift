@@ -33,9 +33,11 @@ struct ContentView: View {
                                     .foregroundColor(.secondary)
                             }
                             Spacer()
-                            Text("\(song.duration) sec")
-                                .font(.caption)
-                                .foregroundColor(.secondary)
+                            if let duration = song.duration {
+                                Text(formattedDuration(duration))
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                            }
                         }
                     }
                 }
@@ -48,7 +50,7 @@ struct ContentView: View {
                     .foregroundColor(.secondary)
             }
         }
-        .onChange(of: selectedFolder) { newFolder in
+        .onChange(of: selectedFolder) { oldFolder, newFolder in
             if let folder = newFolder {
                 Task {
                     let scanner = MusicLibraryScanner()
@@ -56,6 +58,11 @@ struct ContentView: View {
                 }
             }
         }
+    }
+    private func formattedDuration(_ duration: TimeInterval) -> String {
+        let minutes = Int(duration) / 60
+        let seconds = Int(duration) % 60
+        return String(format: "%d:%02d", minutes, seconds)
     }
 }
 
