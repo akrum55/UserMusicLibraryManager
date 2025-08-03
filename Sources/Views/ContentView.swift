@@ -6,7 +6,7 @@ import AppKit
 struct ContentView: View {
     @State private var songs: [Song] = []
     @State private var selectedFolder: URL? = nil
-    @State private var selectedSong: Song? = nil
+    @State private var selectedSongURL: URL? = nil
     @State private var artwork: NSImage? = nil
     @State private var isEditingMetadata: Bool = false
 
@@ -14,8 +14,8 @@ struct ContentView: View {
         NavigationSplitView {
             VStack {
                 FolderPickerView(selectedFolder: $selectedFolder)
-                List(selection: $selectedSong) {
-                    ForEach(songs, id: \ .url) { song in
+                List(selection: $selectedSongURL) {
+                    ForEach(songs, id: \.url) { song in
                         HStack {
                             if let image = song.artwork {
                                 Image(nsImage: image)
@@ -44,13 +44,10 @@ struct ContentView: View {
                 }
             }
         } detail: {
-            if let song = selectedSong {
-                VStack {
-                    SongDetailView(song: song)
-                    Button("Edit Metadata") {
-                        isEditingMetadata = true
-                    }
-                    .padding(.top)
+            if let url = selectedSongURL,
+               let song = songs.first(where: { $0.url == url }) {
+                SongDetailView(song: song) {
+                    isEditingMetadata = true
                 }
             } else {
                 Text("Select a song to view details")
@@ -58,8 +55,9 @@ struct ContentView: View {
             }
         }
         .sheet(isPresented: $isEditingMetadata) {
-            if let binding = Binding($selectedSong) {
-                SongMetadataEditor(song: binding)
+            if let url = selectedSongURL,
+               let index = songs.firstIndex(where: { $0.url == url }) {
+                SongMetadataEditor(song: $songs[index])
             }
         }
         .onChange(of: selectedFolder) { oldFolder, newFolder in

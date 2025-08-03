@@ -4,6 +4,7 @@ import AVFoundation
 
 struct SongDetailView: View {
     let song: Song
+    var onEditMetadataTapped: () -> Void = {}
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -31,6 +32,11 @@ struct SongDetailView: View {
             Text("Path: \(song.url.path)")
                 .font(.caption)
                 .foregroundColor(.gray)
+
+            Button("Edit Metadata") {
+                onEditMetadataTapped()
+            }
+            .padding(.top)
 
             Spacer()
         }
