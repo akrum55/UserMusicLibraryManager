@@ -25,6 +25,7 @@
 		460E8ECB2E3FDBE300265BB2 /* FolderPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460E8EB72E3FDBE300265BB2 /* FolderPickerView.swift */; };
 		46546C9E2E3FF8640084C2DC /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 467231F72E3DEAE700767EB0 /* libz.tbd */; };
 		46546CA32E3FFA990084C2DC /* FlacTagsWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 46546CA22E3FFA990084C2DC /* FlacTagsWrapper.mm */; };
+		4654716B2E400DC30084C2DC /* SongMetadataEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4654716A2E400DC30084C2DC /* SongMetadataEditor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		46310E132E3DBAFF00EAC950 /* libtag_c.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libtag_c.a; path = TagLib/lib/libtag_c.a; sourceTree = "<group>"; };
 		46546C9F2E3FF93E0084C2DC /* FlacTagsWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlacTagsWrapper.h; sourceTree = "<group>"; };
 		46546CA22E3FFA990084C2DC /* FlacTagsWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FlacTagsWrapper.mm; sourceTree = "<group>"; };
+		4654716A2E400DC30084C2DC /* SongMetadataEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongMetadataEditor.swift; sourceTree = "<group>"; };
 		467231F52E3DEAAA00767EB0 /* libtag.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libtag.a; path = TagLib/lib/libtag.a; sourceTree = "<group>"; };
 		467231F72E3DEAE700767EB0 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -333,6 +335,7 @@
 				460E8EB62E3FDBE300265BB2 /* ContentView.swift */,
 				460E8EB72E3FDBE300265BB2 /* FolderPickerView.swift */,
 				460E8EB82E3FDBE300265BB2 /* SongDetailView.swift */,
+				4654716A2E400DC30084C2DC /* SongMetadataEditor.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 				460E8EBD2E3FDBE300265BB2 /* NSImage+Resizing.swift in Sources */,
 				460E8EBE2E3FDBE300265BB2 /* AlbumEditorView.swift in Sources */,
 				460E8EBF2E3FDBE300265BB2 /* Song.swift in Sources */,
+				4654716B2E400DC30084C2DC /* SongMetadataEditor.swift in Sources */,
 				460E8EC02E3FDBE300265BB2 /* AudioMetadataReader.swift in Sources */,
 				460E8EC12E3FDBE300265BB2 /* UserMusicLibraryManagerApp.swift in Sources */,
 				460E8EC22E3FDBE300265BB2 /* UserMetadataStore.swift in Sources */,

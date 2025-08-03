@@ -8,6 +8,7 @@ struct ContentView: View {
     @State private var selectedFolder: URL? = nil
     @State private var selectedSong: Song? = nil
     @State private var artwork: NSImage? = nil
+    @State private var isEditingMetadata: Bool = false
 
     var body: some View {
         NavigationSplitView {
@@ -44,10 +45,21 @@ struct ContentView: View {
             }
         } detail: {
             if let song = selectedSong {
-                SongDetailView(song: song)
+                VStack {
+                    SongDetailView(song: song)
+                    Button("Edit Metadata") {
+                        isEditingMetadata = true
+                    }
+                    .padding(.top)
+                }
             } else {
                 Text("Select a song to view details")
                     .foregroundColor(.secondary)
+            }
+        }
+        .sheet(isPresented: $isEditingMetadata) {
+            if let binding = Binding($selectedSong) {
+                SongMetadataEditor(song: binding)
             }
         }
         .onChange(of: selectedFolder) { oldFolder, newFolder in
