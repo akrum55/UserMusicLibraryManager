@@ -12,26 +12,28 @@ struct SongDetailView: View {
     }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            artworkView
+        ScrollView {
+            VStack(alignment: .leading, spacing: 8) {
+                artworkView
 
-            metadataView
+                metadataView
 
-            trackView
-                .padding(.bottom)
+                trackView
+                    .padding(.bottom)
 
-            Text("Path: \(song.url.path)")
-                .font(.caption)
-                .foregroundColor(.gray)
+                Text("Path: \(song.url.path)")
+                    .font(.caption)
+                    .foregroundColor(.gray)
 
-            Button("Edit Metadata") {
-                onEditMetadataTapped()
+                Button("Edit Metadata") {
+                    onEditMetadataTapped()
+                }
+                .padding(.top)
+
+                Spacer()
             }
-            .padding(.top)
-
-            Spacer()
+            .padding()
         }
-        .padding()
     }
 
     private var artworkView: some View {
@@ -52,15 +54,16 @@ struct SongDetailView: View {
     @ViewBuilder
     private var trackView: some View {
         if let trackNumber = song.effectiveTrackNumber {
-            if let totalTracks = song.effectiveTotalTracksInAlbum {
-                let label = "Track \(trackNumber) of \(totalTracks)"
-                let labelWithAsterisk = isTotalTracksInAlbumGuessed ? "\(label)*" : label
-                Text(labelWithAsterisk)
-                    .accessibilityLabel(isTotalTracksInAlbumGuessed ? "\(label), estimated" : label)
+            if let total = song.totalTracksInAlbumGuess {
+                let label = "Track \(trackNumber) of \(total)"
                 if isTotalTracksInAlbumGuessed {
+                    Text("\(label)*")
+                        .accessibilityLabel("\(label), estimated total tracks: \(total)")
                     Text("* Total tracks estimated from imported files")
                         .font(.caption)
                         .foregroundColor(.gray)
+                } else {
+                    Text(label)
                 }
             } else {
                 Text("Track \(trackNumber)")
