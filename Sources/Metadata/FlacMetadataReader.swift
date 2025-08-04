@@ -16,6 +16,8 @@ class FlacMetadataReader {
         let artist = taglib_tag_artist(tag).flatMap { String(cString: $0) }
         let album = taglib_tag_album(tag).flatMap { String(cString: $0) }
         let trackNumber = Int(taglib_tag_track(tag))
+        let genre = taglib_tag_genre(tag).flatMap { String(cString: $0) }
+        let year = Int(taglib_tag_year(tag))
 
         let audioProperties = taglib_file_audioproperties(file)
         let duration: TimeInterval? = audioProperties.map { TimeInterval(taglib_audioproperties_length($0)) }
@@ -33,8 +35,9 @@ class FlacMetadataReader {
             album: album ?? "Unknown Album",
             duration: duration,
             artwork: artwork,
-            trackNumber: trackNumber
+            trackNumber: trackNumber,
+            genre: genre,
+            year: year
         )
     }
 }
-

@@ -7,10 +7,15 @@ struct SongDetailView: View {
     var onEditMetadataTapped: () -> Void = {}
 
     var body: some View {
-        let _ = {
-            print("Override in detail view:", String(describing: song.userOverrides))
-            print("Detail view using effectiveTrackNumber:", String(describing: song.effectiveTrackNumber))
-        }()
+        let title = song.effectiveTitle
+        let artist = song.effectiveArtist
+        let album = song.effectiveAlbum
+        let genre = song.genre
+        let year = song.year
+        let duration = song.duration
+        let trackNumber = song.effectiveTrackNumber
+        let totalTracks = song.userOverrides?.totalTracksInAlbum ?? song.totalTracksInAlbum
+
         VStack(alignment: .leading, spacing: 8) {
             if let artwork = song.artwork {
                 Image(nsImage: artwork)
@@ -23,16 +28,29 @@ struct SongDetailView: View {
                     .frame(height: 200)
             }
 
-            Text("Title: \(song.effectiveTitle)")
-                .font(.headline)
-            Text("Artist: \(song.effectiveArtist)")
-            Text("Album: \(song.effectiveAlbum)")
-            if let track = song.effectiveTrackNumber {
-                Text("Track: \(track)")
+            Group {
+                Text("Title: \(title)").font(.headline)
+                Text("Artist: \(artist)")
+                Text("Album: \(album)")
+                if let genre {
+                    Text("Genre: \(genre)")
+                }
+                if let year {
+                    Text("Year: \(year)")
+                }
+                if let trackNumber {
+                    if let totalTracks {
+                        Text("Track: \(trackNumber) of \(totalTracks)")
+                    } else {
+                        Text("Track: \(trackNumber)")
+                    }
+                }
+                if let duration {
+                    Text("Duration: \(formattedDuration(duration))")
+                }
             }
-            if let duration = song.duration {
-                Text("Duration: \(formattedDuration(duration))")
-            }
+            .padding(.bottom)
+
             Text("Path: \(song.url.path)")
                 .font(.caption)
                 .foregroundColor(.gray)
@@ -52,4 +70,22 @@ struct SongDetailView: View {
         let seconds = Int(duration) % 60
         return String(format: "%d:%02d", minutes, seconds)
     }
+
+}
+
+#Preview {
+    SongDetailView(song: .constant(
+        Song(
+            url: URL(fileURLWithPath: "/tmp/example.flac"),
+            title: "Example Title",
+            artist: "Example Artist",
+            album: "Example Album",
+            duration: 215,
+            artwork: nil,
+            trackNumber: 1,
+            genre: "Indie Rock",
+            year: 2023,
+            totalTracksInAlbum: 10
+        )
+    ))
 }

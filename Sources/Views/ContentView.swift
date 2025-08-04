@@ -94,7 +94,7 @@ struct ContentView: View {
                     userOverridesByURL = overrides
 
                     songs = scannedSongs.map { song in
-                        var modified = song
+                        let modified = song
                         let standardizedURL = song.url.standardizedFileURL
                         if let override = overrides[standardizedURL] {
                             modified.userOverrides = override
@@ -128,5 +128,12 @@ struct ContentView: View {
                 return original
             }
         }
+    }
+}
+
+@available(macOS 13.0, *)
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
     }
 }

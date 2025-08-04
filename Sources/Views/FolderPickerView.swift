@@ -33,3 +33,7 @@ struct FolderPickerView: View {
         }
     }
 }
+
+#Preview {
+    FolderPickerView(selectedFolder: .constant(nil))
+}

@@ -18,9 +18,18 @@ struct SongMetadataEditor: View {
     @State private var editedArtist: String = ""
     @State private var editedAlbum: String = ""
     @State private var editedTrackNumberString: String = ""
+    @State private var editedGenre: String = ""
+    @State private var editedYearString: String = ""
+    @State private var editedTotalTracksString: String = ""
 
     private var isTrackNumberValid: Bool {
         Int(editedTrackNumberString) != nil
+    }
+    private var isYearValid: Bool {
+        editedYearString.isEmpty || Int(editedYearString) != nil
+    }
+    private var isTotalTracksValid: Bool {
+        editedTotalTracksString.isEmpty || Int(editedTotalTracksString) != nil
     }
 
     var body: some View {
@@ -41,6 +50,19 @@ struct SongMetadataEditor: View {
                         .foregroundColor(.red)
                         .font(.caption)
                 }
+                TextField("Genre", text: $editedGenre)
+                TextField("Year", text: $editedYearString)
+                if !editedYearString.isEmpty && Int(editedYearString) == nil {
+                    Text("Please enter a valid year")
+                        .foregroundColor(.red)
+                        .font(.caption)
+                }
+                TextField("Total Tracks in Album", text: $editedTotalTracksString)
+                if !editedTotalTracksString.isEmpty && Int(editedTotalTracksString) == nil {
+                    Text("Please enter a valid number")
+                        .foregroundColor(.red)
+                        .font(.caption)
+                }
             }
 
             HStack {
@@ -49,15 +71,18 @@ struct SongMetadataEditor: View {
                     dismiss()
                 }
                 Button("OK") {
-                    print("Saving override: track number string = \(editedTrackNumberString)")
                     let parsedTrack = Int(editedTrackNumberString)
-                    print("Parsed track number = \(String(describing: parsedTrack))")
+                    let parsedYear = Int(editedYearString)
+                    let parsedTotalTracks = Int(editedTotalTracksString)
 
                     let override = Song.UserOverrides(
                         title: editedTitle.isEmpty ? nil : editedTitle,
                         artist: editedArtist.isEmpty ? nil : editedArtist,
                         album: editedAlbum.isEmpty ? nil : editedAlbum,
-                        trackNumber: parsedTrack
+                        trackNumber: parsedTrack,
+                        genre: editedGenre.isEmpty ? nil : editedGenre,
+                        year: parsedYear,
+                        totalTracksInAlbum: parsedTotalTracks
                     )
                     onSave?(override)
 
@@ -68,7 +93,11 @@ struct SongMetadataEditor: View {
                     dismiss()
                 }
                 .keyboardShortcut(.defaultAction)
-                .disabled(!editedTrackNumberString.isEmpty && !isTrackNumberValid)
+                .disabled(
+                    (!editedTrackNumberString.isEmpty && !isTrackNumberValid) ||
+                    (!editedYearString.isEmpty && !isYearValid) ||
+                    (!editedTotalTracksString.isEmpty && !isTotalTracksValid)
+                )
             }
             .padding(.top)
         }
@@ -79,6 +108,29 @@ struct SongMetadataEditor: View {
             editedArtist = songs[index].userOverrides?.artist ?? songs[index].artist
             editedAlbum = songs[index].userOverrides?.album ?? songs[index].album
             editedTrackNumberString = songs[index].userOverrides?.trackNumber.map { String($0) } ?? songs[index].trackNumber.map { String($0) } ?? ""
+            editedGenre = songs[index].userOverrides?.genre ?? songs[index].genre ?? ""
+            editedYearString = songs[index].userOverrides?.year.map { String($0) } ?? ""
+            editedTotalTracksString = songs[index].userOverrides?.totalTracksInAlbum.map { String($0) } ?? ""
         }
     }
+}
+
+#Preview {
+    SongMetadataEditor(
+        songs: .constant([
+            Song(
+                url: URL(fileURLWithPath: "/tmp/example.flac"),
+                title: "Example Song",
+                artist: "Example Artist",
+                album: "Example Album",
+                duration: 200,
+                artwork: nil,
+                trackNumber: 1,
+                genre: "Rock",
+                year: 2022
+            )
+        ]),
+        userOverridesByURL: .constant([:]),
+        index: 0
+    )
 }

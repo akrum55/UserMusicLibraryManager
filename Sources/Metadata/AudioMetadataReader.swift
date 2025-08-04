@@ -11,11 +11,12 @@ class AudioMetadataReader {
         let asset = AVURLAsset(url: url)
         _ = try await asset.load(.availableMetadataFormats)
 
-        async let title = asset.loadMetadataValue(for: .commonIdentifierTitle)
-        async let artist = asset.loadMetadataValue(for: .commonIdentifierArtist)
-        async let album = asset.loadMetadataValue(for: .commonIdentifierAlbumName)
+        async let title = asset.loadMetadataValue(for: "title")
+        async let artist = asset.loadMetadataValue(for: "artist")
+        async let album = asset.loadMetadataValue(for: "albumName")
         async let trackNumber = asset.loadMetadataIntValue(for: .iTunesMetadataTrackNumber)
         async let duration = asset.load(.duration).seconds
+        async let genre = asset.loadMetadataValue(for: "genre")
 
         let artwork = try await asset.loadMetadataArtwork()
 
@@ -26,15 +27,17 @@ class AudioMetadataReader {
             album: try await album ?? "Unknown Album",
             duration: try? await duration,
             artwork: artwork,
-            trackNumber: try await trackNumber
+            trackNumber: try await trackNumber,
+            genre: try await genre,
+            year: nil
         )
     }
 }
 
 extension AVAsset {
-    func loadMetadataValue(for identifier: AVMetadataIdentifier) async throws -> String? {
+    func loadMetadataValue(for commonKey: String) async throws -> String? {
         let items = try await self.load(.commonMetadata)
-        if let item = items.first(where: { $0.identifier == identifier }) {
+        if let item = items.first(where: { $0.commonKey?.rawValue == commonKey }) {
             return try await item.load(.stringValue)
         }
         return nil
