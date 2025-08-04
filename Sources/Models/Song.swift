@@ -15,15 +15,22 @@ class Song: Identifiable, Equatable, Hashable {
     let trackNumber: Int?
     let genre: String?
     let totalTracksInAlbum: Int?
+    /// Holds a guessed or inferred total tracks count for fallback or UI
+    var totalTracksInAlbumGuess: Int?
 
     struct UserOverrides: Codable {
-        var title: String?
-        var artist: String?
-        var album: String?
-        var trackNumber: Int?
-        var genre: String?
-        var year: Int?
-        var totalTracksInAlbum: Int?
+        struct Edits: Codable {
+            var title: String?
+            var artist: String?
+            var album: String?
+            var trackNumber: Int?
+            var genre: String?
+            var year: Int?
+            var totalTracksInAlbum: Int?
+            var isTotalTracksInAlbumGuessed: Bool?
+        }
+
+        var edits: Edits
     }
 
     var userOverrides: UserOverrides?
@@ -55,31 +62,35 @@ class Song: Identifiable, Equatable, Hashable {
     }
 
     var effectiveTitle: String {
-        userOverrides?.title ?? title
+        userOverrides?.edits.title ?? title
     }
 
     var effectiveArtist: String {
-        userOverrides?.artist ?? artist
+        userOverrides?.edits.artist ?? artist
     }
 
     var effectiveAlbum: String {
-        userOverrides?.album ?? album
+        userOverrides?.edits.album ?? album
     }
 
     var effectiveTrackNumber: Int? {
-        userOverrides?.trackNumber ?? trackNumber
+        userOverrides?.edits.trackNumber ?? trackNumber
     }
 
     var effectiveGenre: String? {
-        userOverrides?.genre
+        userOverrides?.edits.genre
     }
 
     var effectiveYear: Int? {
-        userOverrides?.year
+        userOverrides?.edits.year
     }
 
     var effectiveTotalTracksInAlbum: Int? {
-        userOverrides?.totalTracksInAlbum
+        userOverrides?.edits.totalTracksInAlbum ?? totalTracksInAlbum
+    }
+
+    var isTotalTracksGuessed: Bool {
+        userOverrides?.edits.isTotalTracksInAlbumGuessed ?? false
     }
 
     static func == (lhs: Song, rhs: Song) -> Bool {
@@ -93,26 +104,33 @@ class Song: Identifiable, Equatable, Hashable {
 
 extension Song {
     func applyOverride(_ override: Song.UserOverrides) {
-        if let newTitle = override.title {
-            self.userOverrides?.title = newTitle
+        if userOverrides == nil {
+            userOverrides = UserOverrides(edits: .init())
         }
-        if let newArtist = override.artist {
-            self.userOverrides?.artist = newArtist
+
+        if let newTitle = override.edits.title {
+            self.userOverrides?.edits.title = newTitle
         }
-        if let newAlbum = override.album {
-            self.userOverrides?.album = newAlbum
+        if let newArtist = override.edits.artist {
+            self.userOverrides?.edits.artist = newArtist
         }
-        if let newTrack = override.trackNumber {
-            self.userOverrides?.trackNumber = newTrack
+        if let newAlbum = override.edits.album {
+            self.userOverrides?.edits.album = newAlbum
         }
-        if let newGenre = override.genre {
-            self.userOverrides?.genre = newGenre
+        if let newTrack = override.edits.trackNumber {
+            self.userOverrides?.edits.trackNumber = newTrack
         }
-        if let newYear = override.year {
-            self.userOverrides?.year = newYear
+        if let newGenre = override.edits.genre {
+            self.userOverrides?.edits.genre = newGenre
         }
-        if let newTotal = override.totalTracksInAlbum {
-            self.userOverrides?.totalTracksInAlbum = newTotal
+        if let newYear = override.edits.year {
+            self.userOverrides?.edits.year = newYear
+        }
+        if let newTotal = override.edits.totalTracksInAlbum {
+            self.userOverrides?.edits.totalTracksInAlbum = newTotal
+        }
+        if let guessed = override.edits.isTotalTracksInAlbumGuessed {
+            self.userOverrides?.edits.isTotalTracksInAlbumGuessed = guessed
         }
     }
 }

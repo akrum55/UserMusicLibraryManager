@@ -6,50 +6,16 @@ struct SongDetailView: View {
     @Binding var song: Song
     var onEditMetadataTapped: () -> Void = {}
 
+    private var songOverrides: Song.UserOverrides? {
+        song.userOverrides
+    }
+
     var body: some View {
-        let title = song.effectiveTitle
-        let artist = song.effectiveArtist
-        let album = song.effectiveAlbum
-        let genre = song.genre
-        let year = song.year
-        let duration = song.duration
-        let trackNumber = song.effectiveTrackNumber
-
         VStack(alignment: .leading, spacing: 8) {
-            if let artwork = song.artwork {
-                Image(nsImage: artwork)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(height: 200)
-            } else {
-                Rectangle()
-                    .fill(Color.gray)
-                    .frame(height: 200)
-            }
+            artworkView
 
-            Group {
-                Text("Title: \(title)").font(.headline)
-                Text("Artist: \(artist)")
-                Text("Album: \(album)")
-                if let genre {
-                    Text("Genre: \(genre)")
-                }
-                if let year {
-                    Text("Year: \(year.description)")
-                }
-                if let trackNumber {
-                    let totalTracks = song.userOverrides?.totalTracksInAlbum ?? song.totalTracksInAlbum
-                    if let totalTracks {
-                        Text("Track \(trackNumber) of \(totalTracks)")
-                    } else {
-                        Text("Track \(trackNumber)")
-                    }
-                }
-                if let duration {
-                    Text("Duration: \(formattedDuration(duration))")
-                }
-            }
-            .padding(.bottom)
+            metadataView
+                .padding(.bottom)
 
             Text("Path: \(song.url.path)")
                 .font(.caption)
@@ -63,6 +29,56 @@ struct SongDetailView: View {
             Spacer()
         }
         .padding()
+    }
+
+    private var artworkView: some View {
+        Group {
+            if let artwork = song.artwork {
+                Image(nsImage: artwork)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(height: 200)
+            } else {
+                Rectangle()
+                    .fill(Color.gray)
+                    .frame(height: 200)
+            }
+        }
+    }
+
+    @ViewBuilder
+    private var trackView: some View {
+        if let trackNumber = song.effectiveTrackNumber {
+            if let totalTracks = song.effectiveTotalTracksInAlbum {
+                let isGuessed = songOverrides?.edits.isTotalTracksInAlbumGuessed ?? false
+                Text("Track \(trackNumber) of \(totalTracks)\(isGuessed ? "*" : "")")
+            } else {
+                Text("Track \(trackNumber)")
+            }
+        }
+    }
+
+    private var metadataView: some View {
+        Group {
+            Text("Title: \(song.effectiveTitle)").font(.headline)
+            Text("Artist: \(song.effectiveArtist)")
+            Text("Album: \(song.effectiveAlbum)")
+            if let genre = song.genre {
+                Text("Genre: \(genre)")
+            }
+            if let year = song.year {
+                Text("Year: \(year.description)")
+            }
+            trackView
+            if let duration = song.duration {
+                Text("Duration: \(formattedDuration(duration))")
+            }
+            if songOverrides?.edits.isTotalTracksInAlbumGuessed == true {
+                Text("* Estimated from imported files")
+                    .font(.caption)
+                    .foregroundColor(.gray)
+            }
+        }
     }
 
     private func formattedDuration(_ duration: TimeInterval) -> String {

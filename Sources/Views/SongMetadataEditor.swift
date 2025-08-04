@@ -40,6 +40,7 @@ struct SongMetadataEditor: View {
                     .bold()
                     .padding(.bottom, 5)
             }
+
             Section(header: Text("Metadata Overrides")) {
                 TextField("Title", text: $editedTitle)
                 TextField("Artist", text: $editedArtist)
@@ -57,7 +58,22 @@ struct SongMetadataEditor: View {
                         .foregroundColor(.red)
                         .font(.caption)
                 }
-                TextField("Total Tracks in Album", text: $editedTotalTracksString)
+
+                ZStack(alignment: .leading) {
+                    if editedTotalTracksString.isEmpty &&
+                        songs[index].userOverrides?.edits.totalTracksInAlbum == nil,
+                       let guess = songs[index].totalTracksInAlbumGuess {
+                        Text(String(guess))
+                            .foregroundColor(.gray)
+                            .padding(.leading, 5)
+                    }
+                    TextField("Total Tracks in Album", text: $editedTotalTracksString)
+                        .onTapGesture {
+                            if editedTotalTracksString == String(songs[index].totalTracksInAlbumGuess ?? -1) {
+                                editedTotalTracksString = ""
+                            }
+                        }
+                }
                 if !editedTotalTracksString.isEmpty && Int(editedTotalTracksString) == nil {
                     Text("Please enter a valid number")
                         .foregroundColor(.red)
@@ -76,13 +92,15 @@ struct SongMetadataEditor: View {
                     let parsedTotalTracks = Int(editedTotalTracksString)
 
                     let override = Song.UserOverrides(
-                        title: editedTitle.isEmpty ? nil : editedTitle,
-                        artist: editedArtist.isEmpty ? nil : editedArtist,
-                        album: editedAlbum.isEmpty ? nil : editedAlbum,
-                        trackNumber: parsedTrack,
-                        genre: editedGenre.isEmpty ? nil : editedGenre,
-                        year: parsedYear,
-                        totalTracksInAlbum: parsedTotalTracks
+                        edits: .init(
+                            title: editedTitle.isEmpty ? nil : editedTitle,
+                            artist: editedArtist.isEmpty ? nil : editedArtist,
+                            album: editedAlbum.isEmpty ? nil : editedAlbum,
+                            trackNumber: parsedTrack,
+                            genre: editedGenre.isEmpty ? nil : editedGenre,
+                            year: parsedYear,
+                            totalTracksInAlbum: parsedTotalTracks
+                        )
                     )
                     onSave?(override)
 
@@ -104,13 +122,19 @@ struct SongMetadataEditor: View {
         .frame(minWidth: 400, minHeight: 300)
         .padding()
         .onAppear {
-            editedTitle = songs[index].userOverrides?.title ?? songs[index].title
-            editedArtist = songs[index].userOverrides?.artist ?? songs[index].artist
-            editedAlbum = songs[index].userOverrides?.album ?? songs[index].album
-            editedTrackNumberString = songs[index].userOverrides?.trackNumber.map { String($0) } ?? songs[index].trackNumber.map { String($0) } ?? ""
-            editedGenre = songs[index].userOverrides?.genre ?? songs[index].genre ?? ""
-            editedYearString = songs[index].userOverrides?.year.map { String($0) } ?? ""
-            editedTotalTracksString = songs[index].userOverrides?.totalTracksInAlbum.map { String($0) } ?? ""
+            editedTitle = songs[index].userOverrides?.edits.title ?? songs[index].title
+            editedArtist = songs[index].userOverrides?.edits.artist ?? songs[index].artist
+            editedAlbum = songs[index].userOverrides?.edits.album ?? songs[index].album
+            editedTrackNumberString = songs[index].userOverrides?.edits.trackNumber.map { String($0) } ?? songs[index].trackNumber.map { String($0) } ?? ""
+            editedGenre = songs[index].userOverrides?.edits.genre ?? songs[index].genre ?? ""
+            editedYearString = songs[index].userOverrides?.edits.year.map { String($0) } ?? ""
+            if let override = songs[index].userOverrides?.edits.totalTracksInAlbum {
+                editedTotalTracksString = String(override)
+            } else if let guessed = songs[index].totalTracksInAlbumGuess {
+                editedTotalTracksString = String(guessed)
+            } else {
+                editedTotalTracksString = ""
+            }
         }
     }
 }

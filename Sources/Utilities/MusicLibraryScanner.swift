@@ -1,6 +1,11 @@
 import Foundation
 import AppKit
 
+private struct HashableAlbumKey: Hashable {
+    let album: String
+    let artist: String
+}
+
 class MusicLibraryScanner {
     func scanFolder(_ folderURL: URL) async -> [Song] {
         let fileManager = FileManager.default
@@ -22,6 +27,18 @@ class MusicLibraryScanner {
             }
         }
 
+        // Guess totalTracksInAlbum for songs missing it
+        let grouped = Dictionary(grouping: songs) {
+            HashableAlbumKey(album: $0.album, artist: $0.artist)
+        }
+        for (_, albumSongs) in grouped {
+            let count = albumSongs.count
+            for song in albumSongs {
+                if song.totalTracksInAlbum == nil {
+                    song.totalTracksInAlbumGuess = count
+                }
+            }
+        }
 
         return songs
     }

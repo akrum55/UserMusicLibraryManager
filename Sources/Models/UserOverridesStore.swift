@@ -39,8 +39,8 @@ struct UserOverridesStore {
     static func clearTotalTracksInAlbumOverrides() {
         var current = load()
         for (url, var override) in current {
-            if override.totalTracksInAlbum != nil {
-                override.totalTracksInAlbum = nil
+            if override.edits.totalTracksInAlbum != nil {
+                override.edits.totalTracksInAlbum = nil
                 current[url] = override
             }
         }

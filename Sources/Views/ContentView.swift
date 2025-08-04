@@ -16,47 +16,8 @@ struct ContentView: View {
         NavigationSplitView {
             VStack {
                 FolderPickerView(selectedFolder: $selectedFolder)
-                List(selection: $selectedSongID) {
-                    ForEach(songs) { song in
-                        HStack {
-                            if let image = song.artwork {
-                                Image(nsImage: image)
-                                    .resizable()
-                                    .frame(width: 40, height: 40)
-                                    .cornerRadius(5)
-                            } else {
-                                Color.gray.frame(width: 40, height: 40)
-                                    .cornerRadius(5)
-                            }
-                            VStack(alignment: .leading) {
-                                Text(song.effectiveTitle)
-                                    .font(.headline)
-                                Text("\(song.effectiveArtist) – \(song.effectiveAlbum)")
-                                    .font(.subheadline)
-                                    .foregroundColor(.secondary)
-                                if let track = song.effectiveTrackNumber {
-                                    let totalTracks = song.userOverrides?.totalTracksInAlbum ?? song.totalTracksInAlbum
-                                    if let totalTracks {
-                                        Text("Track \(track) of \(totalTracks)")
-                                            .font(.caption)
-                                            .foregroundColor(.secondary)
-                                    } else {
-                                        Text("Track \(track)")
-                                            .font(.caption)
-                                            .foregroundColor(.secondary)
-                                    }
-                                }
-                            }
-                            Spacer()
-                            if let duration = song.duration {
-                                Text(formattedDuration(duration))
-                                    .font(.caption)
-                                    .foregroundColor(.secondary)
-                            }
-                        }
-                    }
-                }
-                .id(songsVersion)
+                SongListView(songs: songs, selectedSongID: $selectedSongID)
+                    .id(songsVersion)
             }
         } detail: {
             if let id = selectedSongID,
@@ -115,13 +76,13 @@ struct ContentView: View {
                         let standardizedURL = song.url.standardizedFileURL
                         if let override = overrides[standardizedURL] {
                             modified.userOverrides = override
-                            print("Apply override during map — track number override: \(String(describing: override.trackNumber))")
+                            print("Apply override during map — total tracks override: \(String(describing: override.edits.totalTracksInAlbum))")
                         }
                         return modified
                     }
 
                     for song in songs {
-                        print("Final song override: \(song.url) track: \(String(describing: song.userOverrides?.trackNumber))")
+                        print("Final song override: \(song.url) track: \(String(describing: song.userOverrides?.edits.trackNumber))")
                     }
                 }
             }
@@ -138,13 +99,68 @@ struct ContentView: View {
             if let overrides = userOverridesByURL[standardizedURL] {
                 let modified = original
                 modified.userOverrides = overrides
-                print("Apply override during map — track number override: \(String(describing: overrides.trackNumber))")
-                print("Reapplying override for: \(standardizedURL) track: \(String(describing: overrides.trackNumber))")
+                print("Apply override during map — track number override: \(String(describing: overrides.edits.trackNumber))")
+                print("Reapplying override for: \(standardizedURL) track: \(String(describing: overrides.edits.trackNumber))")
                 return modified
             } else {
                 return original
             }
         }
+    }
+}
+
+
+@available(macOS 13.0, *)
+struct SongListView: View {
+    var songs: [Song]
+    @Binding var selectedSongID: UUID?
+
+    var body: some View {
+        List(selection: $selectedSongID) {
+            ForEach(songs, id: \.id) { song in
+                HStack {
+                    if let image = song.artwork {
+                        Image(nsImage: image)
+                            .resizable()
+                            .frame(width: 40, height: 40)
+                            .cornerRadius(5)
+                    } else {
+                        Color.gray.frame(width: 40, height: 40)
+                            .cornerRadius(5)
+                    }
+                    VStack(alignment: .leading) {
+                        Text(song.effectiveTitle)
+                            .font(.headline)
+                        Text("\(song.effectiveArtist) – \(song.effectiveAlbum)")
+                            .font(.subheadline)
+                            .foregroundColor(.secondary)
+                        if let track = song.effectiveTrackNumber {
+                            let totalTracks = song.userOverrides?.edits.totalTracksInAlbum ?? song.totalTracksInAlbum
+                            if let totalTracks {
+                                Text("Track \(track) of \(totalTracks)")
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                            } else {
+                                Text("Track \(track)")
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                            }
+                        }
+                    }
+                    Spacer()
+                    if let duration = song.duration {
+                        Text(formattedDuration(duration))
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                    }
+                }
+            }
+        }
+    }
+    private func formattedDuration(_ duration: TimeInterval) -> String {
+        let minutes = Int(duration) / 60
+        let seconds = Int(duration) % 60
+        return String(format: "%d:%02d", minutes, seconds)
     }
 }
 
