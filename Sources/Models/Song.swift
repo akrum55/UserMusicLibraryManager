@@ -92,6 +92,17 @@ class Song: Identifiable, Equatable, Hashable {
     var isTotalTracksGuessed: Bool {
         userOverrides?.edits.isTotalTracksInAlbumGuessed ?? false
     }
+    
+    var hasUserDefinedTotalTracks: Bool {
+        userOverrides?.edits.totalTracksInAlbum != nil && !(userOverrides?.edits.isTotalTracksInAlbumGuessed ?? false)
+    }
+
+    var guessedOrActualTotalTracks: Int? {
+        if let manual = userOverrides?.edits.totalTracksInAlbum {
+            return manual
+        }
+        return totalTracksInAlbumGuess
+    }
 
     static func == (lhs: Song, rhs: Song) -> Bool {
         return lhs.url == rhs.url

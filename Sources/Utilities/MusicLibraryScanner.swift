@@ -27,10 +27,16 @@ class MusicLibraryScanner {
             }
         }
 
-        // Guess totalTracksInAlbum for songs missing it
+        applyGuessedTotalTrackCounts(to: &songs)
+
+        return songs
+    }
+
+    private func applyGuessedTotalTrackCounts(to songs: inout [Song]) {
         let grouped = Dictionary(grouping: songs) {
-            HashableAlbumKey(album: $0.album, artist: $0.artist)
+            HashableAlbumKey(album: $0.effectiveAlbum, artist: $0.effectiveArtist)
         }
+
         for (_, albumSongs) in grouped {
             let count = albumSongs.count
             for song in albumSongs {
@@ -39,7 +45,5 @@ class MusicLibraryScanner {
                 }
             }
         }
-
-        return songs
     }
 }

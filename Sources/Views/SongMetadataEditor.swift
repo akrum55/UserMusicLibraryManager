@@ -60,16 +60,17 @@ struct SongMetadataEditor: View {
                 }
 
                 ZStack(alignment: .leading) {
-                    if editedTotalTracksString.isEmpty &&
-                        songs[index].userOverrides?.edits.totalTracksInAlbum == nil,
+                    if editedTotalTracksString.isEmpty,
+                       songs[index].userOverrides?.edits.totalTracksInAlbum == nil,
                        let guess = songs[index].totalTracksInAlbumGuess {
-                        Text(String(guess))
+                        Text("\(guess)*")
                             .foregroundColor(.gray)
                             .padding(.leading, 5)
                     }
                     TextField("Total Tracks in Album", text: $editedTotalTracksString)
                         .onTapGesture {
-                            if editedTotalTracksString == String(songs[index].totalTracksInAlbumGuess ?? -1) {
+                            if editedTotalTracksString == "\(songs[index].totalTracksInAlbumGuess ?? -1)*" ||
+                                editedTotalTracksString == "\(songs[index].totalTracksInAlbumGuess ?? -1)" {
                                 editedTotalTracksString = ""
                             }
                         }

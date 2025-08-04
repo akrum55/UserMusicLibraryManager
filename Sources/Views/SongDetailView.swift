@@ -49,9 +49,10 @@ struct SongDetailView: View {
     @ViewBuilder
     private var trackView: some View {
         if let trackNumber = song.effectiveTrackNumber {
-            if let totalTracks = song.effectiveTotalTracksInAlbum {
-                let isGuessed = songOverrides?.edits.isTotalTracksInAlbumGuessed ?? false
-                Text("Track \(trackNumber) of \(totalTracks)\(isGuessed ? "*" : "")")
+            if let totalTracks = song.totalTracksInAlbum {
+                Text("Track \(trackNumber) of \(totalTracks)")
+            } else if let guessedTracks = song.totalTracksInAlbumGuess {
+                Text("Track \(trackNumber) of \(guessedTracks)*")
             } else {
                 Text("Track \(trackNumber)")
             }
@@ -73,7 +74,7 @@ struct SongDetailView: View {
             if let duration = song.duration {
                 Text("Duration: \(formattedDuration(duration))")
             }
-            if songOverrides?.edits.isTotalTracksInAlbumGuessed == true {
+            if song.totalTracksInAlbum == nil, song.totalTracksInAlbumGuess != nil {
                 Text("* Estimated from imported files")
                     .font(.caption)
                     .foregroundColor(.gray)
