@@ -107,10 +107,13 @@ struct ContentView: View {
                 let modified = original
                 modified.userOverrides = overrides
                 print("Apply override during map — track number override: \(String(describing: overrides.edits.trackNumber))")
-                print("Reapplying override for: \(standardizedURL) track: \(String(describing: overrides.edits.trackNumber))")
+                print("Apply override during map — total tracks override: \(String(describing: overrides.edits.totalTracksInAlbum))")
                 return modified
             } else {
-                return original
+                // Also clear userOverrides if not present
+                let modified = original
+                modified.userOverrides = nil
+                return modified
             }
         }
     }

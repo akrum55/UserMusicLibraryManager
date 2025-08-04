@@ -46,21 +46,21 @@ struct SongDetailView: View {
         }
     }
 
-    @ViewBuilder
     private var trackView: some View {
-        if let trackNumber = song.effectiveTrackNumber {
-            if let totalTracks = song.totalTracksInAlbum {
-                Text("Track \(trackNumber) of \(totalTracks)")
-            } else if let guessedTracks = song.totalTracksInAlbumGuess {
-                Text("Track \(trackNumber) of \(guessedTracks)*")
-            } else {
-                Text("Track \(trackNumber)")
+        Group {
+            if let trackNumber = song.effectiveTrackNumber {
+                if let totalTracks = song.effectiveTotalTracksInAlbum {
+                    let isGuessed = song.isTotalTracksInAlbumGuessed
+                    Text("Track \(trackNumber) of \(totalTracks)\(isGuessed ? "*" : "")")
+                } else {
+                    Text("Track \(trackNumber)")
+                }
             }
         }
     }
 
     private var metadataView: some View {
-        Group {
+        VStack(alignment: .leading, spacing: 4) {
             Text("Title: \(song.effectiveTitle)").font(.headline)
             Text("Artist: \(song.effectiveArtist)")
             Text("Album: \(song.effectiveAlbum)")
@@ -74,8 +74,8 @@ struct SongDetailView: View {
             if let duration = song.duration {
                 Text("Duration: \(formattedDuration(duration))")
             }
-            if song.totalTracksInAlbum == nil, song.totalTracksInAlbumGuess != nil {
-                Text("* Estimated from imported files")
+            if song.isTotalTracksInAlbumGuessed {
+                Text("* Total tracks estimated from imported files")
                     .font(.caption)
                     .foregroundColor(.gray)
             }
@@ -88,6 +88,12 @@ struct SongDetailView: View {
         return String(format: "%d:%02d", minutes, seconds)
     }
 
+}
+
+extension Song {
+    var isTotalTracksInAlbumGuessed: Bool {
+        userOverrides?.edits.isTotalTracksInAlbumGuessed == true
+    }
 }
 
 #Preview {

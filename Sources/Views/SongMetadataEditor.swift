@@ -59,22 +59,27 @@ struct SongMetadataEditor: View {
                         .font(.caption)
                 }
 
-                ZStack(alignment: .leading) {
-                    if editedTotalTracksString.isEmpty,
-                       songs[index].userOverrides?.edits.totalTracksInAlbum == nil,
-                       let guess = songs[index].totalTracksInAlbumGuess {
-                        Text("\(guess)*")
-                            .foregroundColor(.gray)
-                            .padding(.leading, 5)
-                    }
-                    TextField("Total Tracks in Album", text: $editedTotalTracksString)
-                        .onTapGesture {
-                            if editedTotalTracksString == "\(songs[index].totalTracksInAlbumGuess ?? -1)*" ||
-                                editedTotalTracksString == "\(songs[index].totalTracksInAlbumGuess ?? -1)" {
+                TextField("Total Tracks in Album", text: $editedTotalTracksString)
+                    .overlay(
+                        Group {
+                            if editedTotalTracksString.isEmpty,
+                               songs[index].userOverrides?.edits.totalTracksInAlbum == nil,
+                               let guess = songs[index].totalTracksInAlbumGuess {
+                                Text("\(guess)*")
+                                    .foregroundColor(.gray)
+                                    .padding(.leading, 5)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                            }
+                        }
+                    )
+                    .onTapGesture {
+                        if songs[index].userOverrides?.edits.totalTracksInAlbum == nil,
+                           let guess = songs[index].totalTracksInAlbumGuess {
+                            if editedTotalTracksString == "\(guess)" {
                                 editedTotalTracksString = ""
                             }
                         }
-                }
+                    }
                 if !editedTotalTracksString.isEmpty && Int(editedTotalTracksString) == nil {
                     Text("Please enter a valid number")
                         .foregroundColor(.red)
@@ -108,6 +113,8 @@ struct SongMetadataEditor: View {
                     songs[index].userOverrides = override
                     let standardizedURL = songs[index].url.standardizedFileURL
                     userOverridesByURL[standardizedURL] = override
+                    // Clear the guess if user confirms their own value
+                    songs[index].totalTracksInAlbumGuess = nil
 
                     dismiss()
                 }
@@ -129,13 +136,7 @@ struct SongMetadataEditor: View {
             editedTrackNumberString = songs[index].userOverrides?.edits.trackNumber.map { String($0) } ?? songs[index].trackNumber.map { String($0) } ?? ""
             editedGenre = songs[index].userOverrides?.edits.genre ?? songs[index].genre ?? ""
             editedYearString = songs[index].userOverrides?.edits.year.map { String($0) } ?? ""
-            if let override = songs[index].userOverrides?.edits.totalTracksInAlbum {
-                editedTotalTracksString = String(override)
-            } else if let guessed = songs[index].totalTracksInAlbumGuess {
-                editedTotalTracksString = String(guessed)
-            } else {
-                editedTotalTracksString = ""
-            }
+            editedTotalTracksString = songs[index].userOverrides?.edits.totalTracksInAlbum.map { String($0) } ?? ""
         }
     }
 }
