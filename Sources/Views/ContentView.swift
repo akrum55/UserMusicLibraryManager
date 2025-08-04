@@ -22,9 +22,14 @@ struct ContentView: View {
         } detail: {
             if let id = selectedSongID,
                let index = songs.firstIndex(where: { $0.id == id }) {
-                SongDetailView(song: $songs[index]) {
-                    isEditingMetadata = true
+                ScrollView(.vertical, showsIndicators: true) {
+                    SongDetailView(song: $songs[index]) {
+                        isEditingMetadata = true
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding()
                 }
+                .frame(maxWidth: .infinity)
                 .id(songsVersion)
             } else {
                 Text("Select a song to view details")
@@ -58,6 +63,8 @@ struct ContentView: View {
                 }
             }
         }
+        .frame(minWidth: 400, minHeight: 300)
+        .frame(idealWidth: 1000, idealHeight: 700)
         .onChange(of: selectedFolder) { oldFolder, newFolder in
             if let folder = newFolder {
                 Task {
