@@ -36,6 +36,17 @@ struct UserOverridesStore {
             return [:]
         }
     }
+    static func clearTotalTracksInAlbumOverrides() {
+        var current = load()
+        for (url, var override) in current {
+            if override.totalTracksInAlbum != nil {
+                override.totalTracksInAlbum = nil
+                current[url] = override
+            }
+        }
+        save(current)
+        print("🧹 Cleared totalTracksInAlbum overrides from disk.")
+    }
 }
 
 // MARK: - Dictionary Key Helpers

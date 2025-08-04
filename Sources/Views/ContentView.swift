@@ -87,6 +87,16 @@ struct ContentView: View {
                 }
             }
         }
+        .toolbar {
+            ToolbarItem {
+                Button("Clear Total Tracks Overrides") {
+                    UserOverridesStore.clearTotalTracksInAlbumOverrides()
+                    userOverridesByURL = UserOverridesStore.load()
+                    applyUserOverrides()
+                    songsVersion += 1
+                }
+            }
+        }
         .onChange(of: selectedFolder) { oldFolder, newFolder in
             if let folder = newFolder {
                 Task {
