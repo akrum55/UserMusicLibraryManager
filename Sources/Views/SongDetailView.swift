@@ -14,7 +14,6 @@ struct SongDetailView: View {
         let year = song.year
         let duration = song.duration
         let trackNumber = song.effectiveTrackNumber
-        let totalTracks = song.userOverrides?.totalTracksInAlbum ?? song.totalTracksInAlbum
 
         VStack(alignment: .leading, spacing: 8) {
             if let artwork = song.artwork {
@@ -36,13 +35,14 @@ struct SongDetailView: View {
                     Text("Genre: \(genre)")
                 }
                 if let year {
-                    Text("Year: \(year)")
+                    Text("Year: \(year.description)")
                 }
                 if let trackNumber {
+                    let totalTracks = song.userOverrides?.totalTracksInAlbum ?? song.totalTracksInAlbum
                     if let totalTracks {
-                        Text("Track: \(trackNumber) of \(totalTracks)")
+                        Text("Track \(trackNumber) of \(totalTracks)")
                     } else {
-                        Text("Track: \(trackNumber)")
+                        Text("Track \(trackNumber)")
                     }
                 }
                 if let duration {

@@ -35,9 +35,16 @@ struct ContentView: View {
                                     .font(.subheadline)
                                     .foregroundColor(.secondary)
                                 if let track = song.effectiveTrackNumber {
-                                    Text("Track \(track)")
-                                        .font(.caption)
-                                        .foregroundColor(.secondary)
+                                    let totalTracks = song.userOverrides?.totalTracksInAlbum ?? song.totalTracksInAlbum
+                                    if let totalTracks {
+                                        Text("Track \(track) of \(totalTracks)")
+                                            .font(.caption)
+                                            .foregroundColor(.secondary)
+                                    } else {
+                                        Text("Track \(track)")
+                                            .font(.caption)
+                                            .foregroundColor(.secondary)
+                                    }
                                 }
                             }
                             Spacer()
