@@ -22,8 +22,10 @@ struct ContentView: View {
         } detail: {
             if let id = selectedSongID,
                let index = songs.firstIndex(where: { $0.id == id }) {
+                let song = songs[index]
                 ScrollView(.vertical, showsIndicators: true) {
-                    SongDetailView(song: $songs[index]) {
+                    let isGuessed = (song.userOverrides?.edits.totalTracksInAlbum == nil) && (song.totalTracksInAlbumGuess != nil)
+                    SongDetailView(song: $songs[index], isTotalTracksInAlbumGuessed: isGuessed) {
                         isEditingMetadata = true
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)

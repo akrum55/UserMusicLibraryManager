@@ -4,6 +4,7 @@ import AVFoundation
 
 struct SongDetailView: View {
     @Binding var song: Song
+    var isTotalTracksInAlbumGuessed: Bool
     var onEditMetadataTapped: () -> Void = {}
 
     private var songOverrides: Song.UserOverrides? {
@@ -15,6 +16,8 @@ struct SongDetailView: View {
             artworkView
 
             metadataView
+
+            trackView
                 .padding(.bottom)
 
             Text("Path: \(song.url.path)")
@@ -46,15 +49,21 @@ struct SongDetailView: View {
         }
     }
 
+    @ViewBuilder
     private var trackView: some View {
-        Group {
-            if let trackNumber = song.effectiveTrackNumber {
-                if let totalTracks = song.effectiveTotalTracksInAlbum {
-                    let isGuessed = song.isTotalTracksInAlbumGuessed
-                    Text("Track \(trackNumber) of \(totalTracks)\(isGuessed ? "*" : "")")
-                } else {
-                    Text("Track \(trackNumber)")
+        if let trackNumber = song.effectiveTrackNumber {
+            if let totalTracks = song.effectiveTotalTracksInAlbum {
+                let label = "Track \(trackNumber) of \(totalTracks)"
+                let labelWithAsterisk = isTotalTracksInAlbumGuessed ? "\(label)*" : label
+                Text(labelWithAsterisk)
+                    .accessibilityLabel(isTotalTracksInAlbumGuessed ? "\(label), estimated" : label)
+                if isTotalTracksInAlbumGuessed {
+                    Text("* Total tracks estimated from imported files")
+                        .font(.caption)
+                        .foregroundColor(.gray)
                 }
+            } else {
+                Text("Track \(trackNumber)")
             }
         }
     }
@@ -70,14 +79,8 @@ struct SongDetailView: View {
             if let year = song.year {
                 Text("Year: \(year.description)")
             }
-            trackView
             if let duration = song.duration {
                 Text("Duration: \(formattedDuration(duration))")
-            }
-            if song.isTotalTracksInAlbumGuessed {
-                Text("* Total tracks estimated from imported files")
-                    .font(.caption)
-                    .foregroundColor(.gray)
             }
         }
     }
@@ -90,25 +93,22 @@ struct SongDetailView: View {
 
 }
 
-extension Song {
-    var isTotalTracksInAlbumGuessed: Bool {
-        userOverrides?.edits.isTotalTracksInAlbumGuessed == true
-    }
-}
-
 #Preview {
-    SongDetailView(song: .constant(
-        Song(
-            url: URL(fileURLWithPath: "/tmp/example.flac"),
-            title: "Example Title",
-            artist: "Example Artist",
-            album: "Example Album",
-            duration: 215,
-            artwork: nil,
-            trackNumber: 1,
-            genre: "Indie Rock",
-            year: 2023,
-            totalTracksInAlbum: 10
-        )
-    ))
+    SongDetailView(
+        song: .constant(
+            Song(
+                url: URL(fileURLWithPath: "/tmp/example.flac"),
+                title: "Example Title",
+                artist: "Example Artist",
+                album: "Example Album",
+                duration: 215,
+                artwork: nil,
+                trackNumber: 1,
+                genre: "Indie Rock",
+                year: 2023,
+                totalTracksInAlbum: 10
+            )
+        ),
+        isTotalTracksInAlbumGuessed: true
+    )
 }

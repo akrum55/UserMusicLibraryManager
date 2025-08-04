@@ -92,6 +92,10 @@ class Song: Identifiable, Equatable, Hashable {
     var isTotalTracksGuessed: Bool {
         userOverrides?.edits.isTotalTracksInAlbumGuessed ?? false
     }
+
+    var isTotalTracksInAlbumGuessed: Bool {
+        return (userOverrides?.edits.totalTracksInAlbum == nil) && (totalTracksInAlbumGuess != nil)
+    }
     
     var hasUserDefinedTotalTracks: Bool {
         userOverrides?.edits.totalTracksInAlbum != nil && !(userOverrides?.edits.isTotalTracksInAlbumGuessed ?? false)
