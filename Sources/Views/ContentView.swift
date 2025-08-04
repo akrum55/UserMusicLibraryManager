@@ -142,9 +142,14 @@ struct SongListView: View {
                             .font(.subheadline)
                             .foregroundColor(.secondary)
                         if let track = song.effectiveTrackNumber {
-                            let totalTracks = song.userOverrides?.edits.totalTracksInAlbum ?? song.totalTracksInAlbum
-                            if let totalTracks {
-                                Text("Track \(track) of \(totalTracks)")
+                            let effectiveTotal = song.userOverrides?.edits.totalTracksInAlbum
+                                ?? song.totalTracksInAlbumGuess
+                                ?? song.totalTracksInAlbum
+
+                            if let totalTracks = effectiveTotal {
+                                let isGuessed = (song.userOverrides?.edits.totalTracksInAlbum == nil) && (song.totalTracksInAlbumGuess != nil)
+                                let suffix = isGuessed ? "*" : ""
+                                Text("Track \(track) of \(totalTracks)\(suffix)")
                                     .font(.caption)
                                     .foregroundColor(.secondary)
                             } else {
