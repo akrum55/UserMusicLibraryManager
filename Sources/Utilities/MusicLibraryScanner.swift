@@ -40,8 +40,9 @@ class MusicLibraryScanner {
         for (_, albumSongs) in grouped {
             let count = albumSongs.count
             for song in albumSongs {
-                if song.totalTracksInAlbum == nil {
+                if song.customTotalTracksInAlbum == nil {
                     song.totalTracksInAlbumGuess = count
+                    print("Guessed total tracks for '\(song.effectiveTitle)': \(count)")
                 }
             }
         }

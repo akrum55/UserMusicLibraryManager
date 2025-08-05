@@ -21,6 +21,8 @@ struct SongMetadataEditor: View {
     @State private var editedGenre: String = ""
     @State private var editedYearString: String = ""
     @State private var editedTotalTracksString: String = ""
+    @State private var editedPlayCountString: String = ""
+    @State private var editedLastPlayedDate: Date? = nil
 
     private var isTrackNumberValid: Bool {
         Int(editedTrackNumberString) != nil
@@ -45,33 +47,15 @@ struct SongMetadataEditor: View {
                 TextField("Title", text: $editedTitle)
                 TextField("Artist", text: $editedArtist)
                 TextField("Album", text: $editedAlbum)
+
                 TextField("Track Number", text: $editedTrackNumberString)
                 if !editedTrackNumberString.isEmpty && Int(editedTrackNumberString) == nil {
                     Text("Please enter a valid number")
                         .foregroundColor(.red)
                         .font(.caption)
                 }
-                TextField("Genre", text: $editedGenre)
-                TextField("Year", text: $editedYearString)
-                if !editedYearString.isEmpty && Int(editedYearString) == nil {
-                    Text("Please enter a valid year")
-                        .foregroundColor(.red)
-                        .font(.caption)
-                }
 
                 TextField("Total Tracks in Album", text: $editedTotalTracksString)
-                    .overlay(
-                        Group {
-                            if editedTotalTracksString.isEmpty,
-                               songs[index].userOverrides?.edits.totalTracksInAlbum == nil,
-                               let guess = songs[index].totalTracksInAlbumGuess {
-                                Text("\(guess)*")
-                                    .foregroundColor(.gray)
-                                    .padding(.leading, 5)
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                            }
-                        }
-                    )
                     .onTapGesture {
                         if songs[index].userOverrides?.edits.totalTracksInAlbum == nil,
                            let guess = songs[index].totalTracksInAlbumGuess {
@@ -80,11 +64,44 @@ struct SongMetadataEditor: View {
                             }
                         }
                     }
-                if !editedTotalTracksString.isEmpty && Int(editedTotalTracksString) == nil {
-                    Text("Please enter a valid number")
+
+                TextField("Genre", text: $editedGenre)
+                TextField("Year", text: $editedYearString)
+                if !editedYearString.isEmpty && Int(editedYearString) == nil {
+                    Text("Please enter a valid year")
                         .foregroundColor(.red)
                         .font(.caption)
                 }
+
+                // Play Count Stepper
+                Stepper(
+                    "Play Count: \(songs[index].userOverrides?.edits.playCount ?? 0)",
+                    value: Binding<Int>(
+                        get: { songs[index].userOverrides?.edits.playCount ?? 0 },
+                        set: { newValue in
+                            var override = songs[index].userOverrides ?? Song.UserOverrides(edits: .init())
+                            override.edits.playCount = newValue
+                            songs[index].applyOverride(override)
+                            onSave?(override)
+                        }
+                    ),
+                    in: 0...100000
+                )
+
+                // Last Played DatePicker
+                DatePicker(
+                    "Last Played",
+                    selection: Binding<Date>(
+                        get: { songs[index].userOverrides?.edits.lastPlayedDate ?? Date() },
+                        set: { newValue in
+                            var override = songs[index].userOverrides ?? Song.UserOverrides(edits: .init())
+                            override.edits.lastPlayedDate = newValue
+                            songs[index].applyOverride(override)
+                            onSave?(override)
+                        }
+                    ),
+                    displayedComponents: [.date]
+                )
             }
 
             HStack {
@@ -96,6 +113,8 @@ struct SongMetadataEditor: View {
                     let parsedTrack = Int(editedTrackNumberString)
                     let parsedYear = Int(editedYearString)
                     let parsedTotalTracks = Int(editedTotalTracksString)
+                    let parsedPlayCount = Int(editedPlayCountString)
+                    let parsedLastPlayedDate = editedLastPlayedDate
 
                     let override = Song.UserOverrides(
                         edits: .init(
@@ -105,7 +124,9 @@ struct SongMetadataEditor: View {
                             trackNumber: parsedTrack,
                             genre: editedGenre.isEmpty ? nil : editedGenre,
                             year: parsedYear,
-                            totalTracksInAlbum: parsedTotalTracks
+                            totalTracksInAlbum: parsedTotalTracks,
+                            playCount: parsedPlayCount,
+                            lastPlayedDate: parsedLastPlayedDate
                         )
                     )
                     onSave?(override)
@@ -137,6 +158,8 @@ struct SongMetadataEditor: View {
             editedGenre = songs[index].userOverrides?.edits.genre ?? songs[index].genre ?? ""
             editedYearString = songs[index].userOverrides?.edits.year.map { String($0) } ?? ""
             editedTotalTracksString = songs[index].userOverrides?.edits.totalTracksInAlbum.map { String($0) } ?? ""
+            editedPlayCountString = songs[index].userOverrides?.edits.playCount.map { String($0) } ?? ""
+            editedLastPlayedDate = songs[index].userOverrides?.edits.lastPlayedDate
         }
     }
 }

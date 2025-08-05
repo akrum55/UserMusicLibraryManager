@@ -16,10 +16,9 @@ struct SongDetailView: View {
             VStack(alignment: .leading, spacing: 8) {
                 artworkView
 
-                metadataView
-
-                trackView
-                    .padding(.bottom)
+                VStack(alignment: .leading, spacing: 4) {
+                    metadataView
+                }
 
                 Text("Path: \(song.url.path)")
                     .font(.caption)
@@ -51,40 +50,18 @@ struct SongDetailView: View {
         }
     }
 
-    @ViewBuilder
-    private var trackView: some View {
-        if let trackNumber = song.effectiveTrackNumber {
-            if let total = song.totalTracksInAlbumGuess {
-                let label = "Track \(trackNumber) of \(total)"
-                if isTotalTracksInAlbumGuessed {
-                    Text("\(label)*")
-                        .accessibilityLabel("\(label), estimated total tracks: \(total)")
-                    Text("* Total tracks estimated from imported files")
-                        .font(.caption)
-                        .foregroundColor(.gray)
-                } else {
-                    Text(label)
-                }
-            } else {
-                Text("Track \(trackNumber)")
-            }
-        }
-    }
-
     private var metadataView: some View {
         VStack(alignment: .leading, spacing: 4) {
-            Text("Title: \(song.effectiveTitle)").font(.headline)
+            Text("Title: \(song.effectiveTitle)")
+                .font(.headline)
             Text("Artist: \(song.effectiveArtist)")
             Text("Album: \(song.effectiveAlbum)")
-            if let genre = song.genre {
-                Text("Genre: \(genre)")
-            }
-            if let year = song.year {
-                Text("Year: \(year.description)")
-            }
-            if let duration = song.duration {
-                Text("Duration: \(formattedDuration(duration))")
-            }
+            Text("Track: \(song.effectiveTrackNumber.map(String.init) ?? "")")
+            Text("Duration: \(song.duration.map { formattedDuration($0) } ?? "")")
+            Text("Year: \(song.year.map(String.init) ?? "")")
+            Text("Genre: \(song.genre ?? "")")
+            Text("Play Count: \(song.playCount.map(String.init) ?? "")")
+            Text("Last Played: \(song.lastPlayedDate?.formatted(date: .abbreviated, time: .omitted) ?? "")")
         }
     }
 

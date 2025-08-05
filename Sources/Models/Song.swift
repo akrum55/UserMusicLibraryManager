@@ -4,17 +4,19 @@ import AppKit
 class Song: Identifiable, Equatable, Hashable {
     let id = UUID()
     let url: URL
-    let title: String
-    let artist: String
-    let album: String
+    var title: String
+    var artist: String
+    var album: String
     let duration: TimeInterval?
     let artwork: NSImage?
-    let year: Int?
-
+    var year: Int?
+    var playCount: Int?
+    var lastPlayedDate: Date?
+    var rating: Int?
     // Optional track number if available in metadata
-    let trackNumber: Int?
-    let genre: String?
-    let totalTracksInAlbum: Int?
+    var trackNumber: Int?
+    var genre: String?
+    var totalTracksInAlbum: Int?
     /// Holds a guessed or inferred total tracks count for fallback or UI
     var totalTracksInAlbumGuess: Int?
 
@@ -28,6 +30,9 @@ class Song: Identifiable, Equatable, Hashable {
             var year: Int?
             var totalTracksInAlbum: Int?
             var isTotalTracksInAlbumGuessed: Bool?
+            var playCount: Int?
+            var lastPlayedDate: Date?
+            var rating: Int?
         }
 
         var edits: Edits
@@ -45,6 +50,9 @@ class Song: Identifiable, Equatable, Hashable {
         trackNumber: Int?,
         genre: String?,
         year: Int?,
+        playCount: Int? = nil,
+        lastPlayedDate: Date? = nil,
+        rating: Int? = nil,
         totalTracksInAlbum: Int? = nil,
         userOverrides: UserOverrides? = nil
     ) {
@@ -57,6 +65,9 @@ class Song: Identifiable, Equatable, Hashable {
         self.trackNumber = trackNumber
         self.genre = genre
         self.year = year
+        self.playCount = playCount
+        self.lastPlayedDate = lastPlayedDate
+        self.rating = rating
         self.totalTracksInAlbum = totalTracksInAlbum
         self.userOverrides = userOverrides
     }
@@ -85,6 +96,14 @@ class Song: Identifiable, Equatable, Hashable {
         userOverrides?.edits.year
     }
 
+    var effectivePlayCount: Int {
+        userOverrides?.edits.playCount ?? 0
+    }
+
+    var effectiveLastPlayedDate: Date? {
+        userOverrides?.edits.lastPlayedDate
+    }
+
     var effectiveTotalTracksInAlbum: Int? {
         userOverrides?.edits.totalTracksInAlbum ?? totalTracksInAlbum
     }
@@ -106,6 +125,14 @@ class Song: Identifiable, Equatable, Hashable {
             return manual
         }
         return totalTracksInAlbumGuess
+    }
+
+    var customTotalTracksInAlbum: Int? {
+        userOverrides?.edits.totalTracksInAlbum
+    }
+    
+    var effectiveRating: Int? {
+        userOverrides?.edits.rating
     }
 
     static func == (lhs: Song, rhs: Song) -> Bool {
@@ -141,11 +168,20 @@ extension Song {
         if let newYear = override.edits.year {
             self.userOverrides?.edits.year = newYear
         }
+        if let newPlayCount = override.edits.playCount {
+            self.userOverrides?.edits.playCount = newPlayCount
+        }
+        if let newLastPlayed = override.edits.lastPlayedDate {
+            self.userOverrides?.edits.lastPlayedDate = newLastPlayed
+        }
         if let newTotal = override.edits.totalTracksInAlbum {
             self.userOverrides?.edits.totalTracksInAlbum = newTotal
         }
         if let guessed = override.edits.isTotalTracksInAlbumGuessed {
             self.userOverrides?.edits.isTotalTracksInAlbumGuessed = guessed
+        }
+        if let newRating = override.edits.rating {
+            self.userOverrides?.edits.rating = newRating
         }
     }
 }

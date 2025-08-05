@@ -28,6 +28,11 @@ class FlacMetadataReader {
             artwork = NSImage(data: imageData)
         }
 
+        // Optional: Extend TagLib C API to support these if needed
+        let playCount: Int? = nil // Replace if taglib_tag_playcount(tag) becomes available
+        let lastPlayedDate: Date? = nil // Replace if taglib_tag_lastplayed(tag) becomes available
+        let rating: Int? = nil // Replace if taglib_tag_rating(tag) becomes available
+
         return Song(
             url: url,
             title: title ?? url.deletingPathExtension().lastPathComponent,
@@ -37,7 +42,11 @@ class FlacMetadataReader {
             artwork: artwork,
             trackNumber: trackNumber,
             genre: genre,
-            year: year
+            year: year,
+            playCount: playCount,
+            lastPlayedDate: lastPlayedDate,
+            rating: rating,
+            totalTracksInAlbum: nil
         )
     }
 }
