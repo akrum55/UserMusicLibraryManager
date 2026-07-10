@@ -85,6 +85,49 @@ struct UserMusicLibraryManagerTests {
         #expect(song.effectiveRating == 3)
     }
 
+    // MARK: - Override persistence
+
+    // The saved JSON round-trips through disk: encoding to a file and decoding
+    // back yields the same edits, keyed by the standardized file URL. Uses a
+    // throwaway temp file, so it never touches the real overrides.json.
+    @Test func overridesStoreRoundTripsThroughDisk() async throws {
+        let dir = FileManager.default.temporaryDirectory
+            .appendingPathComponent("umlm-store-test-\(UUID().uuidString)")
+        try FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
+        defer { try? FileManager.default.removeItem(at: dir) }
+        let file = dir.appendingPathComponent("overrides.json")
+
+        let key = URL(fileURLWithPath: "/Volumes/Extreme SSD/ipod music/austin/example.flac")
+        let overrides: [URL: Song.UserOverrides] = [
+            key: Song.UserOverrides(
+                edits: .init(title: "New Title", genre: "Jazz", year: 1999,
+                             totalTracksInAlbum: 12, rating: 5)
+            )
+        ]
+
+        UserOverridesStore.save(overrides, to: file)
+        #expect(FileManager.default.fileExists(atPath: file.path))
+
+        let loaded = UserOverridesStore.load(from: file)
+        #expect(loaded.count == 1)
+
+        let edits = loaded[key.standardizedFileURL]?.edits
+        #expect(edits?.title == "New Title")
+        #expect(edits?.genre == "Jazz")
+        #expect(edits?.year == 1999)
+        #expect(edits?.totalTracksInAlbum == 12)
+        #expect(edits?.rating == 5)
+    }
+
+    // Loading from a path that doesn't exist yields an empty map rather than
+    // throwing — the first-launch case.
+    @Test func loadingMissingOverridesFileReturnsEmpty() async throws {
+        let missing = FileManager.default.temporaryDirectory
+            .appendingPathComponent("umlm-does-not-exist-\(UUID().uuidString).json")
+        let loaded = UserOverridesStore.load(from: missing)
+        #expect(loaded.isEmpty)
+    }
+
     // MARK: - Integration: real FLAC scan
 
     // End-to-end scan of a real album folder, exercising MusicLibraryScanner,

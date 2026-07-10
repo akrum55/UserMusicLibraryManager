@@ -16,23 +16,33 @@ struct UserOverridesStore {
     }
 
     static func save(_ overrides: [URL: Song.UserOverrides]) {
+        save(overrides, to: overridesURL)
+    }
+
+    static func load() -> [URL: Song.UserOverrides] {
+        load(from: overridesURL)
+    }
+
+    /// Testable core: writes the overrides to an explicit URL. The public save()
+    /// delegates here with the real Application Support location.
+    static func save(_ overrides: [URL: Song.UserOverrides], to url: URL) {
         let encodableOverrides = overrides.mapKeys { $0.standardizedFileURL.absoluteString }
         do {
             let data = try JSONEncoder().encode(encodableOverrides)
-            try data.write(to: overridesURL)
-            print("✅ Saved overrides to disk at \(overridesURL.path)")
+            try data.write(to: url)
         } catch {
             print("❌ Failed to save overrides: \(error)")
         }
     }
 
-    static func load() -> [URL: Song.UserOverrides] {
+    /// Testable core: reads the overrides from an explicit URL, returning an
+    /// empty map if the file is missing or unreadable.
+    static func load(from url: URL) -> [URL: Song.UserOverrides] {
         do {
-            let data = try Data(contentsOf: overridesURL)
+            let data = try Data(contentsOf: url)
             let raw = try JSONDecoder().decode([String: Song.UserOverrides].self, from: data)
             return raw.compactMapKeys { URL(string: $0)?.standardizedFileURL }
         } catch {
-            print("⚠️ No existing overrides or failed to load: \(error)")
             return [:]
         }
     }
