@@ -1,13 +1,38 @@
-# Xcode build artifacts
+# ---- macOS ----
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# ---- Xcode build output ----
 build/
 DerivedData/
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+*.xcarchive
 
-# macOS files
-.DS_Store
+# Stray build log that got committed before
+build.log
 
-# Xcode user settings
-*.xcuserdata
+# ---- Xcode per-user state ----
+# NOTE: must be xcuserdata/ (the directory) — *.xcuserdata does NOT match it.
+xcuserdata/
 *.xcuserstate
 
-# Archives
-*.xcarchive
+# ---- Swift Package Manager ----
+.build/
+.swiftpm/
+Packages/
+# Keep Package.resolved committed for reproducible builds — do NOT ignore it.
+
+# ---- TagLib note ----
+# TagLib/ IS intentionally tracked (headers + static libs the app links against).
+# Do not add it here.
+
+# ---- Misc ----
+*.tmp
+.env
