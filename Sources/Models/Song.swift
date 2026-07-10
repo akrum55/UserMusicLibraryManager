@@ -88,20 +88,25 @@ class Song: Identifiable, Equatable, Hashable {
         userOverrides?.edits.trackNumber ?? trackNumber
     }
 
+    // NOTE: genre/year/playCount/lastPlayedDate/rating now fall back to the
+    // scanned file value when there is no override (override ?? file). This is
+    // deliberate — it keeps every effective* getter consistent with
+    // effectiveTitle/Artist/Album, so clearing an override reveals the original
+    // file value instead of showing nothing. (See CLAUDE.md note on these getters.)
     var effectiveGenre: String? {
-        userOverrides?.edits.genre
+        userOverrides?.edits.genre ?? genre
     }
 
     var effectiveYear: Int? {
-        userOverrides?.edits.year
+        userOverrides?.edits.year ?? year
     }
 
     var effectivePlayCount: Int {
-        userOverrides?.edits.playCount ?? 0
+        userOverrides?.edits.playCount ?? playCount ?? 0
     }
 
     var effectiveLastPlayedDate: Date? {
-        userOverrides?.edits.lastPlayedDate
+        userOverrides?.edits.lastPlayedDate ?? lastPlayedDate
     }
 
     var effectiveTotalTracksInAlbum: Int? {
@@ -132,7 +137,7 @@ class Song: Identifiable, Equatable, Hashable {
     }
     
     var effectiveRating: Int? {
-        userOverrides?.edits.rating
+        userOverrides?.edits.rating ?? rating
     }
 
     static func == (lhs: Song, rhs: Song) -> Bool {

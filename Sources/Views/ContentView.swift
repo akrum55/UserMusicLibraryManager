@@ -6,7 +6,6 @@ import Dispatch
 @available(macOS 13.0, *)
 struct ContentView: View {
     @State private var songs: [Song] = []
-    @State private var originalSongs: [Song] = []
     @State private var userOverridesByURL: [URL: Song.UserOverrides] = [:]
     @State private var selectedFolder: URL? = nil
     @State private var selectedSongID: UUID? = nil
@@ -46,7 +45,6 @@ struct ContentView: View {
                let index = songs.firstIndex(where: { $0.id == id }) {
                 SongMetadataEditor(songs: $songs, userOverridesByURL: $userOverridesByURL, index: index) { override in
                     let standardizedURL = songs[index].url.standardizedFileURL
-                    print("Received override from editor for:", standardizedURL)
                     userOverridesByURL[standardizedURL] = override
                     UserOverridesStore.save(userOverridesByURL)
                     applyUserOverrides()
@@ -66,10 +64,8 @@ struct ContentView: View {
                         let key = songs[index].url.standardizedFileURL
                         userOverridesByURL.removeValue(forKey: key)
                         UserOverridesStore.save(userOverridesByURL)
-                        // Revert this song to original scanned state
-                        if index < originalSongs.count && originalSongs[index].id == songs[index].id {
-                            songs[index] = originalSongs[index]
-                        }
+                        // Reverting is now just dropping the override: applyUserOverrides()
+                        // clears it and the effective* getters fall back to the file values.
                         applyUserOverrides()
                         songsVersion += 1
                         let clearedID = songs[index].id
@@ -93,8 +89,9 @@ struct ContentView: View {
             Button("Clear", role: .destructive) {
                 userOverridesByURL.removeAll()
                 UserOverridesStore.save(userOverridesByURL)
-                // Revert all songs to original scanned state
-                songs = originalSongs
+                // With the override dictionary emptied, applyUserOverrides() detaches
+                // every override so the songs fall back to their scanned file values.
+                applyUserOverrides()
                 songsVersion += 1
                 selectedSongID = nil
             }
@@ -105,32 +102,12 @@ struct ContentView: View {
             if let folder = newFolder {
                 Task {
                     let scanner = MusicLibraryScanner()
-                    let scannedSongs = await scanner.scanFolder(folder)
-                    originalSongs = scannedSongs
+                    songs = await scanner.scanFolder(folder)
+                    userOverridesByURL = UserOverridesStore.load()
 
-                    for song in scannedSongs {
-                        print("Scanned song URL:", song.url)
-                    }
-
-                    let overrides = UserOverridesStore.load()
-                    userOverridesByURL = overrides
-
-                    songs = scannedSongs.map { song in
-                        let standardizedURL = song.url.standardizedFileURL
-                        let modified = song
-                        if let override = overrides[standardizedURL] {
-                            let modifiedVar = modified
-                            modifiedVar.userOverrides = override
-                            print("Apply override during map — total tracks override: \(String(describing: override.edits.totalTracksInAlbum))")
-                            return modifiedVar
-                        }
-                        return modified
-                    }
-
-                    for song in songs {
-                        print("Final song override: \(song.url) track: \(String(describing: song.userOverrides?.edits.trackNumber))")
-                    }
-                    // Apply existing overrides to all loaded songs
+                    // Attach any saved overrides to the freshly scanned songs.
+                    // We only set `userOverrides`; the scanned file values on each
+                    // Song stay untouched so they remain the source of truth.
                     applyUserOverrides()
                     songsVersion += 1
                 }
@@ -142,54 +119,19 @@ struct ContentView: View {
         let seconds = Int(duration) % 60
         return String(format: "%d:%02d", minutes, seconds)
     }
+    /// Attaches the saved override (if any) to each song and clears it otherwise.
+    /// It deliberately does NOT copy override values into the song's base stored
+    /// properties — those hold the scanned file values and stay untouched, so the
+    /// `effective*` getters remain the single source of truth and clearing an
+    /// override cleanly reveals the original file value again.
+    ///
+    /// Reassigning the `songs` array (rather than mutating in place) is what tells
+    /// SwiftUI to re-render, since `Song` is a reference type and in-place property
+    /// changes on a class don't trigger a view update on their own.
     private func applyUserOverrides() {
-        songs = songs.map { original in
-            let standardizedURL = original.url.standardizedFileURL
-            if let overrides = userOverridesByURL[standardizedURL] {
-                let modified = original
-                let modifiedVar = modified
-                modifiedVar.userOverrides = overrides
-                // Set all editable fields if the override provides a value
-                let edits = overrides.edits
-                if let value = edits.title {
-                    modifiedVar.title = value
-                }
-                if let value = edits.artist {
-                    modifiedVar.artist = value
-                }
-                if let value = edits.album {
-                    modifiedVar.album = value
-                }
-                if let value = edits.trackNumber {
-                    modifiedVar.trackNumber = value
-                }
-                if let value = edits.totalTracksInAlbum {
-                    modifiedVar.totalTracksInAlbum = value
-                }
-                if let value = edits.year {
-                    modifiedVar.year = value
-                }
-                if let value = edits.genre {
-                    modifiedVar.genre = value
-                }
-                if let value = edits.playCount {
-                    modifiedVar.playCount = value
-                }
-                if let value = edits.lastPlayedDate {
-                    modifiedVar.lastPlayedDate = value
-                }
-                if let value = edits.rating {
-                    modifiedVar.rating = value
-                }
-                print("Apply override during map — track number override: \(String(describing: overrides.edits.trackNumber))")
-                print("Apply override during map — total tracks override: \(String(describing: overrides.edits.totalTracksInAlbum))")
-                return modifiedVar
-            } else {
-                // Also clear userOverrides if not present
-                let modified = original
-                modified.userOverrides = nil
-                return modified
-            }
+        songs = songs.map { song in
+            song.userOverrides = userOverridesByURL[song.url.standardizedFileURL]
+            return song
         }
     }
     // Checks if any song in the current list has a user override for totalTracksInAlbum

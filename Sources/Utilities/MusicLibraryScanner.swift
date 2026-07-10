@@ -22,7 +22,6 @@ class MusicLibraryScanner {
 
         for url in fileURLs where audioExtensions.contains(url.pathExtension.lowercased()) {
             if let song = try? await AudioMetadataReader.readMetadata(from: url) {
-                print("Scanner loaded song:", song.url, "track:", song.trackNumber as Any, "genre:", song.genre as Any, "year:", song.year as Any)
                 songs.append(song)
             }
         }
@@ -42,7 +41,6 @@ class MusicLibraryScanner {
             for song in albumSongs {
                 if song.customTotalTracksInAlbum == nil {
                     song.totalTracksInAlbumGuess = count
-                    print("Guessed total tracks for '\(song.effectiveTitle)': \(count)")
                 }
             }
         }
