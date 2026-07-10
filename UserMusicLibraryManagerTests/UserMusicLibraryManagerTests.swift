@@ -84,4 +84,59 @@ struct UserMusicLibraryManagerTests {
         #expect(song.effectiveYear == 2020)
         #expect(song.effectiveRating == 3)
     }
+
+    // MARK: - Integration: real FLAC scan
+
+    // End-to-end scan of a real album folder, exercising MusicLibraryScanner,
+    // the TagLib-backed FlacMetadataReader (Obj-C++ bridge), and the scanner's
+    // total-tracks guessing. Self-skips unless a fixture folder is present, so
+    // it stays green on machines/CI without the music files. Provide one via the
+    // MUSIC_SCAN_FIXTURE env var or a ~/.umlm_scan_fixture folder of audio files.
+    @Test(.enabled(if: scanFixtureURL() != nil))
+    func scanRealFlacAlbumFolder() async throws {
+        let folder = try #require(scanFixtureURL())
+        let songs = await MusicLibraryScanner().scanFolder(folder)
+
+        // All four tracks were read from disk.
+        #expect(songs.count == 4)
+
+        // Titles match the album's real tags.
+        let titles = Set(songs.map { $0.effectiveTitle })
+        #expect(titles == ["Paycheck", "Games", "Star Girl", "Chrono Trigger"])
+
+        // Shared album/artist/genre/year read correctly for every track.
+        for song in songs {
+            #expect(song.effectiveArtist == "Tommy Richman")
+            #expect(song.effectiveAlbum == "Paycheck")
+            #expect(song.effectiveGenre == "Pop")
+            #expect(song.effectiveYear == 2022)
+            #expect((song.duration ?? 0) > 0)
+            // The scanner guesses total tracks from the count of same-album songs.
+            #expect(song.totalTracksInAlbumGuess == 4)
+        }
+
+        // Track numbers 1...4 are all present.
+        let tracks = songs.compactMap { $0.effectiveTrackNumber }.sorted()
+        #expect(tracks == [1, 2, 3, 4])
+    }
+}
+
+/// Resolves the integration-test music fixture, or nil if none is available.
+/// Checks the MUSIC_SCAN_FIXTURE env var first, then ~/.umlm_scan_fixture.
+private func scanFixtureURL() -> URL? {
+    let fm = FileManager.default
+    let candidates: [URL] = {
+        if let env = ProcessInfo.processInfo.environment["MUSIC_SCAN_FIXTURE"], !env.isEmpty {
+            return [URL(fileURLWithPath: env)]
+        }
+        return [fm.homeDirectoryForCurrentUser.appendingPathComponent(".umlm_scan_fixture")]
+    }()
+
+    for url in candidates {
+        var isDir: ObjCBool = false
+        if fm.fileExists(atPath: url.path, isDirectory: &isDir), isDir.boolValue {
+            return url
+        }
+    }
+    return nil
 }
