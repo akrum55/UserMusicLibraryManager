@@ -58,10 +58,10 @@ struct SongDetailView: View {
             Text("Album: \(song.effectiveAlbum)")
             Text("Track: \(song.effectiveTrackNumber.map(String.init) ?? "")")
             Text("Duration: \(song.duration.map { formattedDuration($0) } ?? "")")
-            Text("Year: \(song.year.map(String.init) ?? "")")
-            Text("Genre: \(song.genre ?? "")")
-            Text("Play Count: \(song.playCount.map(String.init) ?? "")")
-            Text("Last Played: \(song.lastPlayedDate?.formatted(date: .abbreviated, time: .omitted) ?? "")")
+            Text("Year: \(song.effectiveYear.map(String.init) ?? "")")
+            Text("Genre: \(song.effectiveGenre ?? "")")
+            Text("Play Count: \(song.effectivePlayCount)")
+            Text("Last Played: \(song.effectiveLastPlayedDate?.formatted(date: .abbreviated, time: .omitted) ?? "")")
         }
     }
 

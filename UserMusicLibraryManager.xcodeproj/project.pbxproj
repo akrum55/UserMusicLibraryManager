@@ -641,7 +641,6 @@
 				OTHER_LDFLAGS = "-lstdc++";
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
-				SWIFT_OBJC_BRIDGING_HEADER = "UserMusicLibraryManager/UserMusicLibraryManager-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -700,7 +699,6 @@
 				OTHER_LDFLAGS = "-lstdc++";
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OBJC_BRIDGING_HEADER = "UserMusicLibraryManager/UserMusicLibraryManager-Bridging-Header.h";
 			};
 			name = Release;
 		};
